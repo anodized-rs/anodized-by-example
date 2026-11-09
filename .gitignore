@@ -1,13 +1,9 @@
-# Aeneas/Charon build (cloned + built by `npm run aeneas-install`)
+# Aeneas/Charon release bundle
 .aeneas/
 .logs/
 
 # Charon intermediate output
 *.llbc
-
-# Node
-node_modules/
-dist/
 
 # Lean
 .lake/
