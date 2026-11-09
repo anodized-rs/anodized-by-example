@@ -21,26 +21,6 @@ set_option maxHeartbeats 1000000
 set_option maxRecDepth 2048
 open e02
 
-/-- [core::slice::iter::{impl core::iter::traits::iterator::Iterator<&'a T> for core::slice::iter::Iter<'a, T>}::all]:
-    Source: '/rustc/library/core/src/slice/iter/macros.rs', lines 304:12-307:45; this code is generated from a macro invocation at: '/rustc/library/core/src/slice/iter.rs', lines 140:0-148:2
-    Name pattern: [core::slice::iter::{core::iter::traits::iterator::Iterator<core::slice::iter::Iter<'a, @T>, &'a @T>}::all]
-    Visibility: public -/
-@[rust_fun
-  "core::slice::iter::{core::iter::traits::iterator::Iterator<core::slice::iter::Iter<'a, @T>, &'a @T>}::all"]
-axiom core.slice.iter.Iter.Insts.CoreIterTraitsIteratorIteratorSharedAT.all
-  {T : Type _} {F : Type _} (opsfunctionFnMutFTupleSharedATBoolInst :
-  core.ops.function.FnMut F T Bool) :
-  core.slice.iter.Iter T → F → Result (Bool × (core.slice.iter.Iter T))
-
-/-- [core::slice::{[T]}::is_sorted]:
-    Source: '/rustc/library/core/src/slice/mod.rs', lines 4750:4-4752:22
-    Name pattern: [core::slice::{[@T]}::is_sorted]
-    Visibility: public -/
-@[rust_fun "core::slice::{[@T]}::is_sorted"]
-axiom core.slice.Slice.is_sorted
-  {T : Type _} (cmpPartialOrdInst : core.cmp.PartialOrd T T) :
-  Slice T → Result Bool
-
 /-- [anodized::__::apply_keep]:
     Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-0.8.0/src/__.rs', lines 6:0-6:74
     Name pattern: [anodized::__::apply_keep]

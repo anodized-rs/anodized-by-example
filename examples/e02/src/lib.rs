@@ -1,26 +1,11 @@
 use anodized::spec;
 
 #[spec(
-    requires: {
-        // TODO: Write `seq.is_sorted()` when Aeneas ships support for it.
-        for i in 1..seq.len() {
-            if seq[i - 1] > seq[i] {
-               return false;
-            } 
-        }
-        true
-    },
+    // TODO: Use `seq.is_sorted()` once Aeneas has better iterator support.
+    requires: slice_is_sorted(seq),
     ensures: |output| match output {
         Some(index) => index < seq.len() && seq[index] == *value,
-        None => {
-            // TODO: Write `seq.iter().all(|item| item != value)` when Aeneas ships support for it.
-            for item in seq {
-                if item == value {
-                    return false;
-                }
-            }
-            true
-        },
+        None => !seq.contains(value),
     },
 )]
 pub fn bin_search<T: Ord>(seq: &[T], value: &T) -> Option<usize> {
@@ -36,4 +21,13 @@ pub fn bin_search<T: Ord>(seq: &[T], value: &T) -> Option<usize> {
         }
     }
     None
+}
+
+fn slice_is_sorted<T: Ord>(seq: &[T]) -> bool {
+    for i in 1..seq.len() {
+        if seq[i - 1] > seq[i] {
+            return false;
+        }
+    }
+    true
 }
