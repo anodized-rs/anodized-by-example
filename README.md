@@ -35,4 +35,4 @@ unchanged, and builds the Lean libraries and proofs.
 The Lean build checks the stated theorems against the generated translation and
 its external assumptions; it does not prove every Rust item. In particular,
 the binary-search proof in `Proofs/e02.lean` relies on explicit assumptions
-about ordering, sortedness, and extracted specification helpers.
+about ordering and the soundness of the sortedness check.

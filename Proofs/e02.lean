@@ -1,8 +1,8 @@
 import examples.e02.translation.Funs
 
-/-! Binary search correctness, conditional on consistent Rust comparison and equality, soundness of
-the extracted sortedness check, and the extracted specification helper
-models. These are explicit hypotheses of the final theorem. -/
+/-! Binary search correctness, conditional on consistent Rust comparison and equality
+and soundness of the extracted sortedness check. These are explicit hypotheses
+of the final theorem. -/
 
 open Aeneas Std Result
 open e02
@@ -127,7 +127,7 @@ theorem bin_search_loop_correct {T : Type} [LinearOrder T] [Inhabited T]
       omega
   · exact ⟨bounds.1, bounds.2, excluded⟩
 
-/-- Functional correctness under the supplied order, sortedness, and helper models. -/
+/-- Functional correctness under the supplied order and sortedness. -/
 theorem bin_search_correct {T : Type} [LinearOrder T] [Inhabited T]
     (ord : core.cmp.Ord T) (s : Aeneas.Std.Slice T) (v : T)
     (sorted : ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
@@ -150,22 +150,33 @@ theorem contains_model_derived {T : Type} [DecidableEq T]
   | cons a xs ih =>
     by_cases h : v = a <;> simp [List.anyM, heq, ih, h, pure]
 
+/-- The extracted postcondition evaluates its predicate on the returned value. -/
+theorem bin_search_ensures_eq {T : Type} (ord : core.cmp.Ord T)
+    (s : Aeneas.Std.Slice T) (v : T) (r : Option Std.Usize) :
+    __anodized_fn_ensures_bin_search ord s v r =
+      __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+        ord (r, s, v) () := by
+  simp [__anodized_fn_ensures_bin_search, e02.anodized.__.eval_once,
+    e02.anodized.__.apply_keep, e02.anodized.__.eval,
+    __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once,
+    __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call]
+
 
 theorem bin_search_contract {T : Type} [LinearOrder T] [Inhabited T]
     (ord : core.cmp.Ord T) (s : Aeneas.Std.Slice T) (v : T)
-    (pre : slice_is_sorted ord s = ok true)
+    (pre : __anodized_fn_requires_bin_search ord s v = ok true)
     (sorted_sound : slice_is_sorted ord s = ok true →
       ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ o => (o = .lt → x < v) ∧ (o = .eq → x = v) ∧ (o = .gt → v < x) ⦄)
-    (eq_model : ∀ x y, ord.eqInst.partialEqInst.eq x y = ok (decide (x = y)))
-    (ensures_model : ∀ r, __anodized_fn_ensures_bin_search ord s v r =
-      __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-        ord (r, s, v) ()) :
+    (eq_model : ∀ x y, ord.eqInst.partialEqInst.eq x y = ok (decide (x = y))) :
     (bin_search ord s v) ⦃ r =>
       __anodized_fn_ensures_bin_search ord s v r = ok true ⦄ := by
-  apply Std.WP.spec_mono (bin_search_correct ord s v (sorted_sound pre) cmp_ok)
+  have sorted_pre : slice_is_sorted ord s = ok true := by
+    simpa [__anodized_fn_requires_bin_search, e02.anodized.__.eval,
+      __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call] using pre
+  apply Std.WP.spec_mono (bin_search_correct ord s v (sorted_sound sorted_pre) cmp_ok)
   intro r hr
-  rw [ensures_model]
+  rw [bin_search_ensures_eq]
   cases r with
   | some i =>
     simp only [__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call]
