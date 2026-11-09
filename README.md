@@ -23,7 +23,9 @@ translations after changing an example, its dependencies, or the Aeneas pin.
 
 The translation script discovers crates under `examples/` and writes their Lean
 files and translation manifests to `examples/<crate>/translation/`. The
-`*External.lean` files currently contain generated templates and axioms; the
+script enables `anodized_charon` for both example crates and the host-built
+procedural macros, so Anodized emits static contracts without wrapping function
+bodies. The `*External.lean` files currently contain generated templates and axioms; the
 script refuses to overwrite them if their generated header is removed for a
 handwritten model. CI regenerates the translations, checks that the checkout is
 unchanged, and builds the Lean libraries and proofs.
@@ -32,6 +34,5 @@ unchanged, and builds the Lean libraries and proofs.
 
 The Lean build checks the stated theorems against the generated translation and
 its external assumptions; it does not prove every Rust item. In particular,
-the binary-search proof in `Proofs/e02.lean` is incomplete, and
-`Proofs/SliceIterExternal.lean` states axioms for external operations. These
-assumptions are part of the trust boundary.
+the binary-search proof in `Proofs/e02.lean` relies on explicit assumptions
+about ordering, sortedness, and extracted specification helpers.

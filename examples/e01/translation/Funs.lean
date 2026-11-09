@@ -3,7 +3,6 @@
 module
 public import Aeneas
 public import examples.e01.translation.Types
-public import examples.e01.translation.FunsExternal
 @[expose] public section
 open Aeneas Aeneas.Std Result ControlFlow Error
 set_option linter.dupNamespace false
@@ -20,1782 +19,1131 @@ set_option maxHeartbeats 1000000
 /- You can set the `maxRecDepth` value with the `-max-recdepth` CLI option -/
 set_option maxRecDepth 2048
 
-/- You can remove the following line by using the CLI option `-all-computable`: -/
-noncomputable section
-
 namespace e01
 
-/-- [e01::f1::{impl core::ops::function::FnOnce<(), ()> for e01::f1::{closure#1}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 5:0-5:24 -/
-def f1.closure_1.Insts.CoreOpsFunctionFnOnceTupleTuple.call_once
-  (c : f1.closure_1) (_ : Unit) : Result Unit := do
+/-- [anodized::__::apply_keep]:
+    Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-0.8.0/src/__.rs', lines 6:0-6:74
+    Name pattern: [anodized::__::apply_keep]
+    Visibility: public -/
+@[rust_fun "anodized::__::apply_keep"]
+def anodized.__.apply_keep
+  {T1 : Type _} {U : Type _} {T2 : Type _} (coreopsfunctionFnT2TupleUPairInst :
+  core.ops.function.Fn T2 U (T1 × U)) (closure : T2) (value : U) :
+  Result (T1 × U)
+  := do
+  coreopsfunctionFnT2TupleUPairInst.call closure value
+
+/-- [anodized::__::eval]:
+    Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-0.8.0/src/__.rs', lines 14:0-14:44
+    Name pattern: [anodized::__::eval]
+    Visibility: public -/
+@[rust_fun "anodized::__::eval"]
+def anodized.__.eval
+  {T1 : Type _} {T11 : Type _} (coreopsfunctionFnT1TupleTInst :
+  core.ops.function.Fn T11 Unit T1) (closure : T11) :
+  Result T1
+  := do
+  coreopsfunctionFnT1TupleTInst.call closure ()
+
+/-- [anodized::__::eval_once]:
+    Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-0.8.0/src/__.rs', lines 21:0-21:53
+    Name pattern: [anodized::__::eval_once]
+    Visibility: public -/
+@[rust_fun "anodized::__::eval_once"]
+def anodized.__.eval_once
+  {T1 : Type _} {T11 : Type _} (coreopsfunctionFnOnceT1TupleTInst :
+  core.ops.function.FnOnce T11 Unit T1) (closure : T11) :
+  Result T1
+  := do
+  coreopsfunctionFnOnceT1TupleTInst.call_once closure ()
+
+/-- [e01::__anodized_fn_ensures_f1::{impl core::ops::function::FnOnce<(), ()> for e01::__anodized_fn_ensures_f1::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
+def
+  __anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple.call_once
+  (c : __anodized_fn_ensures_f1.closure) (_ : Unit) : Result Unit := do
   ok ()
 
-/-- Trait implementation: [e01::f1::{impl core::ops::function::FnOnce<(), ()> for e01::f1::{closure#1}}]
-    Source: 'examples/e01/src/lib.rs', lines 5:0-5:24 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f1::{impl core::ops::function::FnOnce<(), ()> for e01::__anodized_fn_ensures_f1::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
 @[reducible]
-def f1.closure_1.Insts.CoreOpsFunctionFnOnceTupleTuple :
-  core.ops.function.FnOnce f1.closure_1 Unit Unit := {
-  call_once := f1.closure_1.Insts.CoreOpsFunctionFnOnceTupleTuple.call_once
+def __anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple :
+  core.ops.function.FnOnce __anodized_fn_ensures_f1.closure Unit Unit := {
+  call_once :=
+    __anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple.call_once
 }
 
-/-- [e01::f1::{impl core::ops::function::Fn<(), bool> for e01::f1::{closure}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
-def f1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f1.closure) (_ : Unit) : Result Bool := do
+/-- [e01::__anodized_fn_requires_f1::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
+def __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : __anodized_fn_requires_f1.closure) (_ : Unit) : Result Bool := do
   ok (c > 0#u8)
 
-/-- [e01::f1::{impl core::ops::function::FnMut<(), bool> for e01::f1::{closure}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
-def f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f1.closure) (_ : Unit) : Result (Bool × f1.closure) := do
-  let b ← f1.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
+/-- [e01::__anodized_fn_requires_f1::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
+def
+  __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : __anodized_fn_requires_f1.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_requires_f1.closure)
+  := do
+  let b ←
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
   ok (b, state)
 
-/-- [e01::f1::{impl core::ops::function::FnOnce<(), bool> for e01::f1::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
-def f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f1.closure) (_ : Unit) : Result Bool := do
-  let (b, _) ← f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
+/-- [e01::__anodized_fn_requires_f1::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
+def
+  __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : __anodized_fn_requires_f1.closure) (_ : Unit) : Result Bool := do
+  let (b, _) ←
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
   ok b
 
-/-- Trait implementation: [e01::f1::{impl core::ops::function::FnOnce<(), bool> for e01::f1::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f1::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
 @[reducible]
-def f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool : core.ops.function.FnOnce
-  f1.closure Unit Bool := {
-  call_once := f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+def __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
+  core.ops.function.FnOnce __anodized_fn_requires_f1.closure Unit Bool := {
+  call_once :=
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::f1::{impl core::ops::function::FnMut<(), bool> for e01::f1::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f1::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
 @[reducible]
-def f1.closure.Insts.CoreOpsFunctionFnMutTupleBool : core.ops.function.FnMut
-  f1.closure Unit Bool := {
-  FnOnceInst := f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut := f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+def __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool :
+  core.ops.function.FnMut __anodized_fn_requires_f1.closure Unit Bool := {
+  FnOnceInst :=
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  call_mut :=
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::f1::{impl core::ops::function::Fn<(), bool> for e01::f1::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 5:17-5:22 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f1::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
 @[reducible]
-def f1.closure.Insts.CoreOpsFunctionFnTupleBool : core.ops.function.Fn
-  f1.closure Unit Bool := {
-  FnMutInst := f1.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+def __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool :
+  core.ops.function.Fn __anodized_fn_requires_f1.closure Unit Bool := {
+  FnMutInst :=
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  call :=
+    __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
+
+/-- [e01::__anodized_fn_requires_f1]:
+    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
+def __anodized_fn_requires_f1 (x : Std.U8) : Result Bool := do
+  let b ←
+    anodized.__.eval
+      __anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool x
+  ok (true && b)
+
+/-- [e01::__anodized_fn_ensures_f1]:
+    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
+def __anodized_fn_ensures_f1 (x : Std.U8) (_ : Unit) : Result Bool := do
+  anodized.__.eval_once
+    __anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple ()
+  ok true
+
+/-- [e01::__anodized_fn_qualifiers_f1]
+    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
+@[global_simps, irreducible] def __anodized_fn_qualifiers_f1 : Std.U32 := 0#u32
 
 /-- [e01::f1]:
-    Source: 'examples/e01/src/lib.rs', lines 6:0-6:19
+    Source: 'examples/e01/src/lib.rs', lines 9:0-9:19
     Visibility: public -/
 def f1 (x : Std.U8) : Result Unit := do
-  anodized.__.eval_once f1.closure_1.Insts.CoreOpsFunctionFnOnceTupleTuple ()
+  ok ()
 
-/-- [e01::f2::{impl core::ops::function::FnOnce<(), u8> for e01::f2::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
-def f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  (c : f2.closure) (_ : Unit) : Result Std.U8 := do
-  ok 1#u8
+/-- [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f2::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def
+  __anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+  (c : __anodized_fn_ensures_f2.closure) (_ : Unit) : Result Std.U8 := do
+  ok c
 
-/-- Trait implementation: [e01::f2::{impl core::ops::function::FnOnce<(), u8> for e01::f2::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f2::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
-def f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8 : core.ops.function.FnOnce
-  f2.closure Unit Std.U8 := {
-  call_once := f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+def __anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8 :
+  core.ops.function.FnOnce __anodized_fn_ensures_f2.closure Unit Std.U8 := {
+  call_once :=
+    __anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
 }
 
-/-- [e01::f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f2.closure_1.closure) (_ : Unit) : Result Bool := do
+/-- [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
+def
+  __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : __anodized_fn_ensures_f2.closure_1.closure) (_ : Unit) :
+  Result Bool
+  := do
   ok (c = 1#u8)
 
-/-- [e01::f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f2.closure_1.closure) (_ : Unit) :
-  Result (Bool × f2.closure_1.closure)
+/-- [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
+def
+  __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : __anodized_fn_ensures_f2.closure_1.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_ensures_f2.closure_1.closure)
   := do
-  let b ← f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
+  let b ←
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
   ok (b, state)
 
-/-- [e01::f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f2.closure_1.closure) (_ : Unit) : Result Bool := do
+/-- [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
+def
+  __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : __anodized_fn_ensures_f2.closure_1.closure) (_ : Unit) :
+  Result Bool
+  := do
   let (b, _) ←
-    f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
   ok b
 
-/-- Trait implementation: [e01::f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
 @[reducible]
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f2.closure_1.closure Unit Bool := {
+def
+  __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  : core.ops.function.FnOnce __anodized_fn_ensures_f2.closure_1.closure Unit
+  Bool := {
   call_once :=
-    f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
 @[reducible]
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f2.closure_1.closure Unit Bool := {
-  FnOnceInst := f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut := f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+def
+  __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  : core.ops.function.FnMut __anodized_fn_ensures_f2.closure_1.closure Unit
+  Bool := {
+  FnOnceInst :=
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  call_mut :=
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f2::{closure#1}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:25-8:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
 @[reducible]
-def f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f2.closure_1.closure Unit Bool := {
-  FnMutInst := f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+def __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+  : core.ops.function.Fn __anodized_fn_ensures_f2.closure_1.closure Unit Bool
+  := {
+  FnMutInst :=
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  call :=
+    __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
 
-/-- [e01::f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
-def f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f2.closure_1) (tupled_args : Std.U8) : Result (Bool × Std.U8) := do
-  ok (c && true, tupled_args)
+/-- [e01::__anodized_fn_ensures_f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def
+  __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+  (c : __anodized_fn_ensures_f2.closure_1) (tupled_args : Std.U8) :
+  Result (Bool × Std.U8)
+  := do
+  let b ←
+    anodized.__.eval
+      __anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+      tupled_args
+  ok (c && b, tupled_args)
 
-/-- [e01::f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
-def f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f2.closure_1) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f2.closure_1)
+/-- [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def
+  __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+  (state : __anodized_fn_ensures_f2.closure_1) (args : Std.U8) :
+  Result ((Bool × Std.U8) × __anodized_fn_ensures_f2.closure_1)
   := do
   let p ←
-    f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+      state args
   ok (p, state)
 
-/-- [e01::f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
-def f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f2.closure_1) (i : Std.U8) : Result (Bool × Std.U8) := do
+/-- [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def
+  __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+  (c : __anodized_fn_ensures_f2.closure_1) (i : Std.U8) :
+  Result (Bool × Std.U8)
+  := do
   let (p, _) ←
-    f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+      c i
   ok p
 
-/-- Trait implementation: [e01::f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
-def f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f2.closure_1 Std.U8 (Bool × Std.U8) := {
+def
+  __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  : core.ops.function.FnOnce __anodized_fn_ensures_f2.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
   call_once :=
-    f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
 }
 
-/-- Trait implementation: [e01::f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
-def f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f2.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut := f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+def
+  __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  : core.ops.function.FnMut __anodized_fn_ensures_f2.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
+  FnOnceInst :=
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  call_mut :=
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
 }
 
-/-- Trait implementation: [e01::f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f2::{closure#1}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:38 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
-def f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f2.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+def __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+  : core.ops.function.Fn __anodized_fn_ensures_f2.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
+  FnMutInst :=
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  call :=
+    __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
 }
+
+/-- [e01::__anodized_fn_requires_f2]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def __anodized_fn_requires_f2 : Result Bool := do
+  ok true
+
+/-- [e01::__anodized_fn_ensures_f2]:
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+def __anodized_fn_ensures_f2 (__anodized_output : Std.U8) : Result Bool := do
+  let __anodized_output1 ←
+    anodized.__.eval_once
+      __anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8
+      __anodized_output
+  let (__anodized_post, _) ←
+    anodized.__.apply_keep
+      __anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+      true __anodized_output1
+  ok __anodized_post
+
+/-- [e01::__anodized_fn_qualifiers_f2]
+    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+@[global_simps, irreducible] def __anodized_fn_qualifiers_f2 : Std.U32 := 0#u32
 
 /-- [e01::f2]:
-    Source: 'examples/e01/src/lib.rs', lines 9:0-11:1
+    Source: 'examples/e01/src/lib.rs', lines 12:0-14:1
     Visibility: public -/
 def f2 : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8 ()
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 true
-      __anodized_output
-  if __anodized_post
-  then ok __anodized_output1
-  else ok __anodized_output1
+  ok 1#u8
 
-/-- [e01::f4::{impl core::ops::function::FnOnce<(), u8> for e01::f4::{closure#1}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-def f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  (c : f4.closure_1) (_ : Unit) : Result Std.U8 := do
-  c - 1#u8
+/-- [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f4::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def
+  __anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+  (c : __anodized_fn_ensures_f4.closure) (_ : Unit) : Result Std.U8 := do
+  ok c
 
-/-- Trait implementation: [e01::f4::{impl core::ops::function::FnOnce<(), u8> for e01::f4::{closure#1}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f4::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
 @[reducible]
-def f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8 : core.ops.function.FnOnce
-  f4.closure_1 Unit Std.U8 := {
-  call_once := f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+def __anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8 :
+  core.ops.function.FnOnce __anodized_fn_ensures_f4.closure Unit Std.U8 := {
+  call_once :=
+    __anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
 }
 
-/-- [e01::f4::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f4.closure_2.closure) (_ : Unit) : Result Bool := do
+/-- [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
+def
+  __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : __anodized_fn_ensures_f4.closure_1.closure) (_ : Unit) :
+  Result Bool
+  := do
   let (i, i1) := c
   ok (i < i1)
 
-/-- [e01::f4::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f4.closure_2.closure) (_ : Unit) :
-  Result (Bool × f4.closure_2.closure)
-  := do
-  let b ← f4.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f4::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f4.closure_2.closure) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    f4.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
-  ok b
-
-/-- Trait implementation: [e01::f4::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-@[reducible]
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f4.closure_2.closure Unit Bool := {
-  call_once :=
-    f4.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f4::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-@[reducible]
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f4.closure_2.closure Unit Bool := {
-  FnOnceInst := f4.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut := f4.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f4::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f4::{closure#2}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 17:22-17:32 -/
-@[reducible]
-def f4.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f4.closure_2.closure Unit Bool := {
-  FnMutInst := f4.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f4.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-def f4.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f4.closure_2) (tupled_args : Std.U8) : Result (Bool × Std.U8) := do
-  let (b, _) := c
-  ok (b && true, tupled_args)
-
-/-- [e01::f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-def f4.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f4.closure_2) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f4.closure_2)
-  := do
-  let p ←
-    f4.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
-  ok (p, state)
-
-/-- [e01::f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-def f4.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f4.closure_2) (i : Std.U8) : Result (Bool × Std.U8) := do
-  let (p, _) ←
-    f4.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
-  ok p
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-@[reducible]
-def f4.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f4.closure_2 Std.U8 (Bool × Std.U8) := {
-  call_once :=
-    f4.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-}
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-@[reducible]
-def f4.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f4.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f4.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut := f4.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-}
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f4::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 15:0-18:2 -/
-@[reducible]
-def f4.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f4.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f4.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f4.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-}
-
-/-- [e01::f4::{impl core::ops::function::Fn<(), bool> for e01::f4::{closure}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-def f4.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f4.closure) (_ : Unit) : Result Bool := do
-  ok (c > 0#u8)
-
-/-- [e01::f4::{impl core::ops::function::FnMut<(), bool> for e01::f4::{closure}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-def f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f4.closure) (_ : Unit) : Result (Bool × f4.closure) := do
-  let b ← f4.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f4::{impl core::ops::function::FnOnce<(), bool> for e01::f4::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-def f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f4.closure) (_ : Unit) : Result Bool := do
-  let (b, _) ← f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
-  ok b
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::FnOnce<(), bool> for e01::f4::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-@[reducible]
-def f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool : core.ops.function.FnOnce
-  f4.closure Unit Bool := {
-  call_once := f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::FnMut<(), bool> for e01::f4::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-@[reducible]
-def f4.closure.Insts.CoreOpsFunctionFnMutTupleBool : core.ops.function.FnMut
-  f4.closure Unit Bool := {
-  FnOnceInst := f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut := f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f4::{impl core::ops::function::Fn<(), bool> for e01::f4::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 16:14-16:19 -/
-@[reducible]
-def f4.closure.Insts.CoreOpsFunctionFnTupleBool : core.ops.function.Fn
-  f4.closure Unit Bool := {
-  FnMutInst := f4.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f4.closure.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f4]:
-    Source: 'examples/e01/src/lib.rs', lines 19:0-21:1
-    Visibility: public -/
-def f4 (x : Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8 x
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      f4.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 (true, x)
-      __anodized_output
-  if __anodized_post
-  then ok __anodized_output1
-  else ok __anodized_output1
-
-/-- [e01::T::f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::f3::{closure#1}<'_0, Self>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
-def T.f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  {Self : Type _} (TInst : T Self) (c : T.f3.closure_1 Self) (_ : Unit) :
-  Result Std.U8
-  := do
-  TInst.__anodized_f3 c
-
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::f3::{closure#1}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
-@[reducible]
-def T.f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8 {Self : Type _} (TInst :
-  T Self) : core.ops.function.FnOnce (T.f3.closure_1 Self) Unit Std.U8 := {
-  call_once := T.f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-    TInst
-}
-
-/-- [e01::T::f3::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  {Self : Type _} (c : T.f3.closure_2.closure Self) (_ : Unit) :
-  Result Bool
-  := do
-  ok (c > 0#u8)
-
-/-- [e01::T::f3::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  {Self : Type _} (state : T.f3.closure_2.closure Self) (_ : Unit) :
-  Result (Bool × (T.f3.closure_2.closure Self))
+/-- [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
+def
+  __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : __anodized_fn_ensures_f4.closure_1.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_ensures_f4.closure_1.closure)
   := do
   let b ←
-    T.f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
   ok (b, state)
 
-/-- [e01::T::f3::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  {Self : Type _} (c : T.f3.closure_2.closure Self) (_ : Unit) :
+/-- [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
+def
+  __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : __anodized_fn_ensures_f4.closure_1.closure) (_ : Unit) :
   Result Bool
   := do
   let (b, _) ←
-    T.f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
   ok b
 
-/-- Trait implementation: [e01::T::f3::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
 @[reducible]
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool (Self : Type _)
-  : core.ops.function.FnOnce (T.f3.closure_2.closure Self) Unit Bool := {
+def
+  __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  : core.ops.function.FnOnce __anodized_fn_ensures_f4.closure_1.closure Unit
+  Bool := {
   call_once :=
-    T.f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::T::f3::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
 @[reducible]
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool (Self : Type _)
-  : core.ops.function.FnMut (T.f3.closure_2.closure Self) Unit Bool := {
-  FnOnceInst := T.f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-    Self
+def
+  __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  : core.ops.function.FnMut __anodized_fn_ensures_f4.closure_1.closure Unit
+  Bool := {
+  FnOnceInst :=
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
   call_mut :=
-    T.f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::T::f3::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::T::f3::{closure#2}::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 29:26-29:36 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
 @[reducible]
-def T.f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool (Self : Type _) :
-  core.ops.function.Fn (T.f3.closure_2.closure Self) Unit Bool := {
-  FnMutInst := T.f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool Self
-  call := T.f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
+def __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+  : core.ops.function.Fn __anodized_fn_ensures_f4.closure_1.closure Unit Bool
+  := {
+  FnMutInst :=
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  call :=
+    __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
 
-/-- [e01::T::f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
-def T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  {Self : Type _} (c : T.f3.closure_2 Self) (tupled_args : Std.U8) :
+/-- [e01::__anodized_fn_ensures_f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def
+  __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+  (c : __anodized_fn_ensures_f4.closure_1) (tupled_args : Std.U8) :
   Result (Bool × Std.U8)
   := do
-  ok (c && true, tupled_args)
+  let (b, i) := c
+  let b1 ←
+    anodized.__.eval
+      __anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+      (tupled_args, i)
+  ok (b && b1, tupled_args)
 
-/-- [e01::T::f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
-def T.f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  {Self : Type _} (state : T.f3.closure_2 Self) (args : Std.U8) :
-  Result ((Bool × Std.U8) × (T.f3.closure_2 Self))
+/-- [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def
+  __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+  (state : __anodized_fn_ensures_f4.closure_1) (args : Std.U8) :
+  Result ((Bool × Std.U8) × __anodized_fn_ensures_f4.closure_1)
   := do
   let p ←
-    T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+      state args
   ok (p, state)
 
-/-- [e01::T::f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
-def T.f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  {Self : Type _} (c : T.f3.closure_2 Self) (i : Std.U8) :
+/-- [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def
+  __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+  (c : __anodized_fn_ensures_f4.closure_1) (i : Std.U8) :
   Result (Bool × Std.U8)
   := do
   let (p, _) ←
-    T.f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+      c i
   ok p
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
 @[reducible]
-def T.f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 (Self : Type _)
-  : core.ops.function.FnOnce (T.f3.closure_2 Self) Std.U8 (Bool × Std.U8) := {
+def
+  __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  : core.ops.function.FnOnce __anodized_fn_ensures_f4.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
   call_once :=
-    T.f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
 }
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
 @[reducible]
-def T.f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 (Self : Type _)
-  : core.ops.function.FnMut (T.f3.closure_2 Self) Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := T.f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-    Self
+def
+  __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  : core.ops.function.FnMut __anodized_fn_ensures_f4.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
+  FnOnceInst :=
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
   call_mut :=
-    T.f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
 }
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::f3::{closure#2}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7 -/
+/-- Trait implementation: [e01::__anodized_fn_ensures_f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}]
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
 @[reducible]
-def T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 (Self : Type _) :
-  core.ops.function.Fn (T.f3.closure_2 Self) Std.U8 (Bool × Std.U8) := {
-  FnMutInst := T.f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 Self
-  call := T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+def __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+  : core.ops.function.Fn __anodized_fn_ensures_f4.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
+  FnMutInst :=
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  call :=
+    __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
 }
 
-/-- [e01::T::f3::{impl core::ops::function::Fn<(), bool> for e01::T::f3::{closure}<'_0, Self>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
-def T.f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  {Self : Type _} (c : T.f3.closure Self) (_ : Unit) : Result Bool := do
+/-- [e01::__anodized_fn_requires_f4::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
+def __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : __anodized_fn_requires_f4.closure) (_ : Unit) : Result Bool := do
   ok (c > 0#u8)
 
-/-- [e01::T::f3::{impl core::ops::function::FnMut<(), bool> for e01::T::f3::{closure}<'_0, Self>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
-def T.f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  {Self : Type _} (state : T.f3.closure Self) (_ : Unit) :
-  Result (Bool × (T.f3.closure Self))
+/-- [e01::__anodized_fn_requires_f4::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
+def
+  __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : __anodized_fn_requires_f4.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_requires_f4.closure)
   := do
-  let b ← T.f3.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
+  let b ←
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
   ok (b, state)
 
-/-- [e01::T::f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::f3::{closure}<'_0, Self>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
-def T.f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  {Self : Type _} (c : T.f3.closure Self) (_ : Unit) : Result Bool := do
-  let (b, _) ← T.f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
+/-- [e01::__anodized_fn_requires_f4::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
+def
+  __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : __anodized_fn_requires_f4.closure) (_ : Unit) : Result Bool := do
+  let (b, _) ←
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
   ok b
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::f3::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f4::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
 @[reducible]
-def T.f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool (Self : Type _) :
-  core.ops.function.FnOnce (T.f3.closure Self) Unit Bool := {
-  call_once := T.f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+def __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
+  core.ops.function.FnOnce __anodized_fn_requires_f4.closure Unit Bool := {
+  call_once :=
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::FnMut<(), bool> for e01::T::f3::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f4::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
 @[reducible]
-def T.f3.closure.Insts.CoreOpsFunctionFnMutTupleBool (Self : Type _) :
-  core.ops.function.FnMut (T.f3.closure Self) Unit Bool := {
-  FnOnceInst := T.f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool Self
-  call_mut := T.f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+def __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool :
+  core.ops.function.FnMut __anodized_fn_requires_f4.closure Unit Bool := {
+  FnOnceInst :=
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  call_mut :=
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::T::f3::{impl core::ops::function::Fn<(), bool> for e01::T::f3::{closure}<'_0, Self>}]
-    Source: 'examples/e01/src/lib.rs', lines 28:18-28:23 -/
+/-- Trait implementation: [e01::__anodized_fn_requires_f4::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
 @[reducible]
-def T.f3.closure.Insts.CoreOpsFunctionFnTupleBool (Self : Type _) :
-  core.ops.function.Fn (T.f3.closure Self) Unit Bool := {
-  FnMutInst := T.f3.closure.Insts.CoreOpsFunctionFnMutTupleBool Self
-  call := T.f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+def __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool :
+  core.ops.function.Fn __anodized_fn_requires_f4.closure Unit Bool := {
+  FnMutInst :=
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  call :=
+    __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
 
-/-- [e01::T::f3]:
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7
+/-- [e01::__anodized_fn_requires_f4]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def __anodized_fn_requires_f4 (x : Std.U8) : Result Bool := do
+  let b ←
+    anodized.__.eval
+      __anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool x
+  ok (true && b)
+
+/-- [e01::__anodized_fn_ensures_f4]:
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+def __anodized_fn_ensures_f4
+  (x : Std.U8) (__anodized_output : Std.U8) : Result Bool := do
+  let __anodized_output1 ←
+    anodized.__.eval_once
+      __anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8
+      __anodized_output
+  let (__anodized_post, _) ←
+    anodized.__.apply_keep
+      __anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+      (true, x) __anodized_output1
+  ok __anodized_post
+
+/-- [e01::__anodized_fn_qualifiers_f4]
+    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+@[global_simps, irreducible] def __anodized_fn_qualifiers_f4 : Std.U32 := 0#u32
+
+/-- [e01::f4]:
+    Source: 'examples/e01/src/lib.rs', lines 22:0-24:1
+    Visibility: public -/
+def f4 (x : Std.U8) : Result Std.U8 := do
+  x - 1#u8
+
+/-- [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::__anodized_fn_ensures_f3::{closure}<'_0, Self>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+def
+  T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+  {Self : Type _} (c : T.__anodized_fn_ensures_f3.closure Self) (_ : Unit) :
+  Result Std.U8
+  := do
+  ok c
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::__anodized_fn_ensures_f3::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+@[reducible]
+def T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8 (Self
+  : Type _) : core.ops.function.FnOnce (T.__anodized_fn_ensures_f3.closure
+  Self) Unit Std.U8 := {
+  call_once :=
+    T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+}
+
+/-- [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  {Self : Type _} (c : T.__anodized_fn_ensures_f3.closure_1.closure Self)
+  (_ : Unit) :
+  Result Bool
+  := do
+  ok (c > 0#u8)
+
+/-- [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  {Self : Type _} (state : T.__anodized_fn_ensures_f3.closure_1.closure Self)
+  (_ : Unit) :
+  Result (Bool × (T.__anodized_fn_ensures_f3.closure_1.closure Self))
+  := do
+  let b ←
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
+  ok (b, state)
+
+/-- [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  {Self : Type _} (c : T.__anodized_fn_ensures_f3.closure_1.closure Self)
+  (_ : Unit) :
+  Result Bool
+  := do
+  let (b, _) ←
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
+  ok b
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  (Self : Type _) : core.ops.function.FnOnce
+  (T.__anodized_fn_ensures_f3.closure_1.closure Self) Unit Bool := {
+  call_once :=
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  (Self : Type _) : core.ops.function.FnMut
+  (T.__anodized_fn_ensures_f3.closure_1.closure Self) Unit Bool := {
+  FnOnceInst :=
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+    Self
+  call_mut :=
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+  (Self : Type _) : core.ops.function.Fn
+  (T.__anodized_fn_ensures_f3.closure_1.closure Self) Unit Bool := {
+  FnMutInst :=
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+    Self
+  call :=
+    T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+}
+
+/-- [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+  {Self : Type _} (c : T.__anodized_fn_ensures_f3.closure_1 Self)
+  (tupled_args : Std.U8) :
+  Result (Bool × Std.U8)
+  := do
+  let b ←
+    anodized.__.eval
+      (T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+      Self) tupled_args
+  ok (c && b, tupled_args)
+
+/-- [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+  {Self : Type _} (state : T.__anodized_fn_ensures_f3.closure_1 Self)
+  (args : Std.U8) :
+  Result ((Bool × Std.U8) × (T.__anodized_fn_ensures_f3.closure_1 Self))
+  := do
+  let p ←
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+      state args
+  ok (p, state)
+
+/-- [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+  {Self : Type _} (c : T.__anodized_fn_ensures_f3.closure_1 Self) (i : Std.U8)
+  :
+  Result (Bool × Std.U8)
+  := do
+  let (p, _) ←
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+      c i
+  ok p
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  (Self : Type _) : core.ops.function.FnOnce
+  (T.__anodized_fn_ensures_f3.closure_1 Self) Std.U8 (Bool × Std.U8) := {
+  call_once :=
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  (Self : Type _) : core.ops.function.FnMut
+  (T.__anodized_fn_ensures_f3.closure_1 Self) Std.U8 (Bool × Std.U8) := {
+  FnOnceInst :=
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+    Self
+  call_mut :=
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+@[reducible]
+def
+  T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+  (Self : Type _) : core.ops.function.Fn (T.__anodized_fn_ensures_f3.closure_1
+  Self) Std.U8 (Bool × Std.U8) := {
+  FnMutInst :=
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+    Self
+  call :=
+    T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+}
+
+/-- [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+def T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  {Self : Type _} (c : T.__anodized_fn_requires_f3.closure Self) (_ : Unit) :
+  Result Bool
+  := do
+  ok (c > 0#u8)
+
+/-- [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+def
+  T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  {Self : Type _} (state : T.__anodized_fn_requires_f3.closure Self) 
+  (_ : Unit) :
+  Result (Bool × (T.__anodized_fn_requires_f3.closure Self))
+  := do
+  let b ←
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
+  ok (b, state)
+
+/-- [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+def
+  T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  {Self : Type _} (c : T.__anodized_fn_requires_f3.closure Self) (_ : Unit) :
+  Result Bool
+  := do
+  let (b, _) ←
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
+  ok b
+
+/-- Trait implementation: [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+@[reducible]
+def T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  (Self : Type _) : core.ops.function.FnOnce
+  (T.__anodized_fn_requires_f3.closure Self) Unit Bool := {
+  call_once :=
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+@[reducible]
+def T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  (Self : Type _) : core.ops.function.FnMut
+  (T.__anodized_fn_requires_f3.closure Self) Unit Bool := {
+  FnOnceInst :=
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+    Self
+  call_mut :=
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+}
+
+/-- Trait implementation: [e01::T::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}]
+    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+@[reducible]
+def T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool (Self
+  : Type _) : core.ops.function.Fn (T.__anodized_fn_requires_f3.closure Self)
+  Unit Bool := {
+  FnMutInst :=
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool
+    Self
+  call :=
+    T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+}
+
+/-- [e01::T::__anodized_fn_requires_f3]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7
     Visibility: public -/
 @[trait_default]
-def T.f3.default
-  {Self : Type _} (TInst : T Self) (x : Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once (T.f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8
-      TInst) x
-  let (__anodized_post, __anodized_output1) ←
+def T.__anodized_fn_requires_f3.default
+  (Self : Type _) (x : Std.U8) : Result Bool := do
+  let b ←
+    anodized.__.eval
+      (T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool
+      Self) x
+  ok (true && b)
+
+/-- [e01::T::__anodized_fn_ensures_f3]:
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7
+    Visibility: public -/
+@[trait_default]
+def T.__anodized_fn_ensures_f3.default
+  (Self : Type _) (x : Std.U8) (__anodized_output : Std.U8) : Result Bool := do
+  let __anodized_output1 ←
+    anodized.__.eval_once
+      (T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8
+      Self) __anodized_output
+  let (__anodized_post, _) ←
     anodized.__.apply_keep
-      (T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 Self) true
-      __anodized_output
-  if __anodized_post
-  then ok __anodized_output1
-  else ok __anodized_output1
+      (T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+      Self) true __anodized_output1
+  ok __anodized_post
 
 /-- [e01::T::__anodized_fn_qualifiers_trait_f3]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7
     Visibility: public -/
 @[global_simps, irreducible, trait_default]
 def T.__anodized_fn_qualifiers_trait_f3.default (Self : Type _) : Std.U32 :=
   0#u32
 
 /-- [e01::T::__anodized_fn_qualifiers_f3]
-    Source: 'examples/e01/src/lib.rs', lines 25:0-25:7
+    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7
     Visibility: public -/
 @[global_simps, irreducible, trait_default]
 def T.__anodized_fn_qualifiers_f3.default (Self : Type _) : Std.U32 := 0#u32
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_f3::{closure#1}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
-def TU8.__anodized_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  (c : TU8.__anodized_f3.closure_1) (_ : Unit) : Result Std.U8 := do
-  ok 2#u8
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+def
+  TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+  (c : TU8.__anodized_fn_ensures_f3.closure) (_ : Unit) : Result Std.U8 := do
+  ok c
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_f3::{closure#1}}]
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
 @[reducible]
-def TU8.__anodized_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8 :
-  core.ops.function.FnOnce TU8.__anodized_f3.closure_1 Unit Std.U8 := {
+def TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8 :
+  core.ops.function.FnOnce TU8.__anodized_fn_ensures_f3.closure Unit Std.U8
+  := {
   call_once :=
-    TU8.__anodized_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
+    TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
 }
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
-def TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : TU8.__anodized_f3.closure_2.closure) (_ : Unit) : Result Bool := do
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : TU8.__anodized_fn_ensures_f3.closure_1.closure) (_ : Unit) :
+  Result Bool
+  := do
   ok (c > 1#u8)
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
 def
-  TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : TU8.__anodized_f3.closure_2.closure) (_ : Unit) :
-  Result (Bool × TU8.__anodized_f3.closure_2.closure)
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : TU8.__anodized_fn_ensures_f3.closure_1.closure) (_ : Unit) :
+  Result (Bool × TU8.__anodized_fn_ensures_f3.closure_1.closure)
   := do
   let b ←
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
       state ()
   ok (b, state)
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
 def
-  TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : TU8.__anodized_f3.closure_2.closure) (_ : Unit) : Result Bool := do
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : TU8.__anodized_fn_ensures_f3.closure_1.closure) (_ : Unit) :
+  Result Bool
+  := do
   let (b, _) ←
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
       c ()
   ok b
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce TU8.__anodized_f3.closure_2.closure Unit Bool := {
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  : core.ops.function.FnOnce TU8.__anodized_fn_ensures_f3.closure_1.closure
+  Unit Bool := {
   call_once :=
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut TU8.__anodized_f3.closure_2.closure Unit Bool := {
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
+  : core.ops.function.FnMut TU8.__anodized_fn_ensures_f3.closure_1.closure Unit
+  Bool := {
   FnOnceInst :=
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
   call_mut :=
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 38:26-38:36 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn TU8.__anodized_f3.closure_2.closure Unit Bool := {
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+  : core.ops.function.Fn TU8.__anodized_fn_ensures_f3.closure_1.closure Unit
+  Bool := {
   FnMutInst :=
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
   call :=
-    TU8.__anodized_f3.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
+    TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
-def TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : TU8.__anodized_f3.closure_2) (tupled_args : Std.U8) :
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+  (c : TU8.__anodized_fn_ensures_f3.closure_1) (tupled_args : Std.U8) :
   Result (Bool × Std.U8)
   := do
-  ok (c && true, tupled_args)
+  let b ←
+    anodized.__.eval
+      TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+      tupled_args
+  ok (c && b, tupled_args)
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
 def
-  TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : TU8.__anodized_f3.closure_2) (args : Std.U8) :
-  Result ((Bool × Std.U8) × TU8.__anodized_f3.closure_2)
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+  (state : TU8.__anodized_fn_ensures_f3.closure_1) (args : Std.U8) :
+  Result ((Bool × Std.U8) × TU8.__anodized_fn_ensures_f3.closure_1)
   := do
   let p ←
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
       state args
   ok (p, state)
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
 def
-  TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : TU8.__anodized_f3.closure_2) (i : Std.U8) :
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+  (c : TU8.__anodized_fn_ensures_f3.closure_1) (i : Std.U8) :
   Result (Bool × Std.U8)
   := do
   let (p, _) ←
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
       c i
   ok p
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce TU8.__anodized_f3.closure_2 Std.U8 (Bool × Std.U8)
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  : core.ops.function.FnOnce TU8.__anodized_fn_ensures_f3.closure_1 Std.U8
+  (Bool × Std.U8) := {
+  call_once :=
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+}
+
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+@[reducible]
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  : core.ops.function.FnMut TU8.__anodized_fn_ensures_f3.closure_1 Std.U8 (Bool
+  × Std.U8) := {
+  FnOnceInst :=
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+  call_mut :=
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+}
+
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}]
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+@[reducible]
+def
+  TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+  : core.ops.function.Fn TU8.__anodized_fn_ensures_f3.closure_1 Std.U8 (Bool ×
+  Std.U8) := {
+  FnMutInst :=
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+  call :=
+    TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+}
+
+/-- [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call]:
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
+def TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+  (c : TU8.__anodized_fn_requires_f3.closure) (_ : Unit) : Result Bool := do
+  ok true
+
+/-- [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call_mut]:
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
+def
+  TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+  (state : TU8.__anodized_fn_requires_f3.closure) (_ : Unit) :
+  Result (Bool × TU8.__anodized_fn_requires_f3.closure)
+  := do
+  let b ←
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
+      state ()
+  ok (b, state)
+
+/-- [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call_once]:
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
+def
+  TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
+  (c : TU8.__anodized_fn_requires_f3.closure) (_ : Unit) : Result Bool := do
+  let (b, _) ←
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
+      c ()
+  ok b
+
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}]
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
+@[reducible]
+def TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool
+  : core.ops.function.FnOnce TU8.__anodized_fn_requires_f3.closure Unit Bool
   := {
   call_once :=
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
 }
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}]
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut TU8.__anodized_f3.closure_2 Std.U8 (Bool × Std.U8)
-  := {
+def TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool :
+  core.ops.function.FnMut TU8.__anodized_fn_requires_f3.closure Unit Bool := {
   FnOnceInst :=
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool
   call_mut :=
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
 }
 
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_f3::{closure#2}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7 -/
+/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}]
+    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
 @[reducible]
-def TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn TU8.__anodized_f3.closure_2 Std.U8 (Bool × Std.U8) := {
+def TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool :
+  core.ops.function.Fn TU8.__anodized_fn_requires_f3.closure Unit Bool := {
   FnMutInst :=
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool
   call :=
-    TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
+    TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
 }
+
+/-- [e01::{impl e01::T for u8}::__anodized_fn_requires_f3]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7
+    Visibility: public -/
+def U8.Insts.E01T.__anodized_fn_requires_f3 (x : Std.U8) : Result Bool := do
+  let b ←
+    anodized.__.eval
+      TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool ()
+  ok (true && b)
+
+/-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3]:
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7
+    Visibility: public -/
+def U8.Insts.E01T.__anodized_fn_ensures_f3
+  (x : Std.U8) (__anodized_output : Std.U8) : Result Bool := do
+  let __anodized_output1 ←
+    anodized.__.eval_once
+      TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8
+      __anodized_output
+  let (__anodized_post, _) ←
+    anodized.__.apply_keep
+      TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
+      true __anodized_output1
+  ok __anodized_post
 
 /-- [e01::{impl e01::T for u8}::__anodized_fn_qualifiers_f3]
-    Source: 'examples/e01/src/lib.rs', lines 34:0-34:7
+    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7
     Visibility: public -/
 @[global_simps, irreducible]
 def U8.Insts.E01T.__anodized_fn_qualifiers_f3 : Std.U32 := 0#u32
 
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : TU8.__anodized_f3.closure) (_ : Unit) : Result Bool := do
-  ok true
-
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : TU8.__anodized_f3.closure) (_ : Unit) :
-  Result (Bool × TU8.__anodized_f3.closure)
-  := do
-  let b ←
-    TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : TU8.__anodized_f3.closure) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
-  ok b
-
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-@[reducible]
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce TU8.__anodized_f3.closure Unit Bool := {
-  call_once :=
-    TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-@[reducible]
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut TU8.__anodized_f3.closure Unit Bool := {
-  FnOnceInst := TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::{impl e01::T for u8}::__anodized_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_f3::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 37:18-37:22 -/
-@[reducible]
-def TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn TU8.__anodized_f3.closure Unit Bool := {
-  FnMutInst := TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := TU8.__anodized_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::{impl e01::T for u8}::__anodized_f3]:
-    Source: 'examples/e01/src/lib.rs', lines 40:4-42:5
-    Visibility: public -/
-def U8.Insts.E01T.__anodized_f3 (x : Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once
-      TU8.__anodized_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8 ()
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      TU8.__anodized_f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 true
-      __anodized_output
-  if __anodized_post
-  then ok __anodized_output1
-  else ok __anodized_output1
-
 /-- [e01::{impl e01::T for u8}::f3]:
-    Source: 'examples/e01/src/lib.rs', lines 35:0-43:1
+    Source: 'examples/e01/src/lib.rs', lines 43:4-45:5
     Visibility: public -/
 def U8.Insts.E01T.f3 (x : Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once (T.f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8
-      U8.Insts.E01T) x
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      (T.f3.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 Std.U8) true
-      __anodized_output
-  if __anodized_post
-  then ok __anodized_output1
-  else ok __anodized_output1
+  ok 2#u8
 
 /-- Trait implementation: [e01::{impl e01::T for u8}]
-    Source: 'examples/e01/src/lib.rs', lines 35:0-43:1 -/
+    Source: 'examples/e01/src/lib.rs', lines 38:0-46:1 -/
 @[reducible]
 def U8.Insts.E01T : T Std.U8 := {
   __anodized_fn_qualifiers_trait_f3 := ok
     (T.__anodized_fn_qualifiers_trait_f3.default Std.U8)
   __anodized_fn_qualifiers_f3 := ok U8.Insts.E01T.__anodized_fn_qualifiers_f3
-  __anodized_f3 := U8.Insts.E01T.__anodized_f3
+  __anodized_fn_requires_f3 := U8.Insts.E01T.__anodized_fn_requires_f3
+  __anodized_fn_ensures_f3 := U8.Insts.E01T.__anodized_fn_ensures_f3
   f3 := U8.Insts.E01T.f3
-}
-
-/-- [e01::f_loop::{impl core::ops::function::FnOnce<(), u8> for e01::f_loop::{closure}<'_0>}::call_once]: loop body 0:
-    Source: 'examples/e01/src/lib.rs', lines 58:4-62:5 -/
-@[rust_loop_body]
-def f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop.body
-  (s : Slice Std.U8) (iter : core.ops.range.Range Std.Usize) (max : Std.U8) :
-  Result (ControlFlow ((core.ops.range.Range Std.Usize) × Std.U8) Std.U8)
-  := do
-  let (o, iter1) ←
-    core.iter.range.IteratorRange.next core.iter.range.StepUsize iter
-  match o with
-  | none => ok (done max)
-  | some i =>
-    let i1 ← Slice.index_usize s i
-    if i1 > max
-    then ok (cont (iter1, i1))
-    else ok (cont (iter1, max))
-
-/-- [e01::f_loop::{impl core::ops::function::FnOnce<(), u8> for e01::f_loop::{closure}<'_0>}::call_once]: loop 0:
-    Source: 'examples/e01/src/lib.rs', lines 58:4-62:5 -/
-@[rust_loop]
-def f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop
-  (iter : core.ops.range.Range Std.Usize) (s : Slice Std.U8) (max : Std.U8) :
-  Result Std.U8
-  := do
-  loop
-    (fun (iter1, max1) =>
-      f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop.body s
-      iter1 max1)
-    (iter, max)
-
-/-- [e01::f_loop::{impl core::ops::function::FnOnce<(), u8> for e01::f_loop::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  (c : f_loop.closure) (_ : Unit) : Result Std.U8 := do
-  let i := Slice.len c
-  f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop
-    { start := 0#usize, «end» := i } c 0#u8
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::FnOnce<(), u8> for e01::f_loop::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8 :
-  core.ops.function.FnOnce f_loop.closure Unit Std.U8 := {
-  call_once := f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-}
-
-/-- [e01::f_loop::{closure#1}::{closure#1}::{impl core::ops::function::FnMut<(&'_0 u8,), bool> for e01::f_loop::{closure#1}::{closure#1}::{closure}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 49:21-49:42 -/
-def
-  f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-  (c : f_loop.closure_1.closure_1.closure) (tupled_args : Std.U8) :
-  Result (Bool × f_loop.closure_1.closure_1.closure)
-  := do
-  let b ←
-    core.cmp.impls.PartialOrdShared.le core.cmp.PartialOrdU8 tupled_args c
-  ok (b, c)
-
-/-- [e01::f_loop::{closure#1}::{closure#1}::{impl core::ops::function::FnOnce<(&'_0 u8,), bool> for e01::f_loop::{closure#1}::{closure#1}::{closure}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 49:21-49:42 -/
-def
-  f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool.call_once
-  (c : f_loop.closure_1.closure_1.closure) (i : Std.U8) : Result Bool := do
-  let (b, _) ←
-    f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-      c i
-  ok b
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{closure#1}::{impl core::ops::function::FnOnce<(&'_0 u8,), bool> for e01::f_loop::{closure#1}::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 49:21-49:42 -/
-@[reducible]
-def
-  f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool
-  : core.ops.function.FnOnce f_loop.closure_1.closure_1.closure Std.U8 Bool
-  := {
-  call_once :=
-    f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{closure#1}::{impl core::ops::function::FnMut<(&'_0 u8,), bool> for e01::f_loop::{closure#1}::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 49:21-49:42 -/
-@[reducible]
-def
-  f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool
-  : core.ops.function.FnMut f_loop.closure_1.closure_1.closure Std.U8 Bool := {
-  FnOnceInst :=
-    f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool
-  call_mut :=
-    f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-}
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f_loop.closure_1.closure_1) (_ : Unit) : Result Bool := do
-  let (s, i) := c
-  let i1 ← core.slice.Slice.iter s
-  let (b, _) ←
-    core.slice.iter.Iter.Insts.CoreIterTraitsIteratorIteratorSharedAT.all
-      f_loop.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool
-      i1 i
-  ok b
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f_loop.closure_1.closure_1) (_ : Unit) :
-  Result (Bool × f_loop.closure_1.closure_1)
-  := do
-  let b ←
-    f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f_loop.closure_1.closure_1) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c
-      ()
-  ok b
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-@[reducible]
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f_loop.closure_1.closure_1 Unit Bool := {
-  call_once :=
-    f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-@[reducible]
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f_loop.closure_1.closure_1 Unit Bool := {
-  FnOnceInst := f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f_loop::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 49:8-49:43 -/
-@[reducible]
-def f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f_loop.closure_1.closure_1 Unit Bool := {
-  FnMutInst := f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f_loop.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-  (c : f_loop.closure_1.closure) (tupled_args : Std.U8) : Result Unit := do
-  ok ()
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-  (state : f_loop.closure_1.closure) (args : Std.U8) :
-  Result f_loop.closure_1.closure
-  := do
-  f_loop.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call state args
-  ok state
-
-/-- [e01::f_loop::{closure#1}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-  (c : f_loop.closure_1.closure) (i : Std.U8) : Result Unit := do
-  let _ ←
-    f_loop.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut c
-      i
-  ok ()
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple :
-  core.ops.function.FnOnce f_loop.closure_1.closure Std.U8 Unit := {
-  call_once :=
-    f_loop.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple :
-  core.ops.function.FnMut f_loop.closure_1.closure Std.U8 Unit := {
-  FnOnceInst :=
-    f_loop.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple
-  call_mut :=
-    f_loop.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#1}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_loop::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple :
-  core.ops.function.Fn f_loop.closure_1.closure Std.U8 Unit := {
-  FnMutInst := f_loop.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple
-  call := f_loop.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-}
-
-/-- [e01::f_loop::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f_loop.closure_1) (tupled_args : Std.U8) : Result (Bool × Std.U8) := do
-  let (b, _) := c
-  anodized.__.coerce_input
-    f_loop.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple () tupled_args
-  ok (b && true, tupled_args)
-
-/-- [e01::f_loop::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f_loop.closure_1) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f_loop.closure_1)
-  := do
-  let p ←
-    f_loop.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
-  ok (p, state)
-
-/-- [e01::f_loop::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f_loop.closure_1) (i : Std.U8) : Result (Bool × Std.U8) := do
-  let (p, _) ←
-    f_loop.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
-  ok p
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f_loop.closure_1 Std.U8 (Bool × Std.U8) := {
-  call_once :=
-    f_loop.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f_loop.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f_loop.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut :=
-    f_loop.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_loop::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f_loop.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f_loop.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f_loop.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-}
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f_loop.closure_2.closure_1) (_ : Unit) : Result Bool := do
-  let (s, i) := c
-  let b ← core.slice.Slice.contains core.cmp.PartialEqU8 s i
-  let i1 := Slice.len s
-  ok (b = (i1 > 0#usize))
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f_loop.closure_2.closure_1) (_ : Unit) :
-  Result (Bool × f_loop.closure_2.closure_1)
-  := do
-  let b ←
-    f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f_loop.closure_2.closure_1) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c
-      ()
-  ok b
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-@[reducible]
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f_loop.closure_2.closure_1 Unit Bool := {
-  call_once :=
-    f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-@[reducible]
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f_loop.closure_2.closure_1 Unit Bool := {
-  FnOnceInst := f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f_loop::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 50:8-50:43 -/
-@[reducible]
-def f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f_loop.closure_2.closure_1 Unit Bool := {
-  FnMutInst := f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f_loop.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-  (c : f_loop.closure_2.closure) (tupled_args : Std.U8) : Result Unit := do
-  ok ()
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-  (state : f_loop.closure_2.closure) (args : Std.U8) :
-  Result f_loop.closure_2.closure
-  := do
-  f_loop.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call state args
-  ok state
-
-/-- [e01::f_loop::{closure#2}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-  (c : f_loop.closure_2.closure) (i : Std.U8) : Result Unit := do
-  let _ ←
-    f_loop.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut c
-      i
-  ok ()
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple :
-  core.ops.function.FnOnce f_loop.closure_2.closure Std.U8 Unit := {
-  call_once :=
-    f_loop.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple :
-  core.ops.function.FnMut f_loop.closure_2.closure Std.U8 Unit := {
-  FnOnceInst :=
-    f_loop.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple
-  call_mut :=
-    f_loop.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{closure#2}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_loop::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple :
-  core.ops.function.Fn f_loop.closure_2.closure Std.U8 Unit := {
-  FnMutInst := f_loop.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple
-  call := f_loop.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-}
-
-/-- [e01::f_loop::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f_loop.closure_2) (tupled_args : Std.U8) : Result (Bool × Std.U8) := do
-  let (b, _) := c
-  anodized.__.coerce_input
-    f_loop.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple () tupled_args
-  ok (b && true, tupled_args)
-
-/-- [e01::f_loop::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f_loop.closure_2) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f_loop.closure_2)
-  := do
-  let p ←
-    f_loop.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
-  ok (p, state)
-
-/-- [e01::f_loop::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-def f_loop.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f_loop.closure_2) (i : Std.U8) : Result (Bool × Std.U8) := do
-  let (p, _) ←
-    f_loop.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
-  ok p
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f_loop.closure_2 Std.U8 (Bool × Std.U8) := {
-  call_once :=
-    f_loop.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-}
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f_loop.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f_loop.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut :=
-    f_loop.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-}
-
-/-- Trait implementation: [e01::f_loop::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_loop::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 47:0-52:2 -/
-@[reducible]
-def f_loop.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f_loop.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f_loop.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f_loop.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-}
-
-/-- [e01::f_loop]:
-    Source: 'examples/e01/src/lib.rs', lines 53:0-64:1
-    Visibility: public -/
-def f_loop (x : Slice Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once f_loop.closure.Insts.CoreOpsFunctionFnOnceTupleU8 x
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      f_loop.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 (true, x)
-      __anodized_output
-  let (__anodized_post1, __anodized_output2) ←
-    anodized.__.apply_keep
-      f_loop.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
-      (__anodized_post, x) __anodized_output1
-  if __anodized_post1
-  then ok __anodized_output2
-  else ok __anodized_output2
-
-/-- [e01::f_while::{impl core::ops::function::FnOnce<(), u8> for e01::f_while::{closure}<'_0>}::call_once]: loop body 0:
-    Source: 'examples/e01/src/lib.rs', lines 84:4-89:5 -/
-@[rust_loop_body]
-def f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop.body
-  (s : Slice Std.U8) (max : Std.U8) (i : Std.Usize) :
-  Result (ControlFlow (Std.U8 × Std.Usize) Std.U8)
-  := do
-  let i1 := Slice.len s
-  if i < i1
-  then
-    let i2 ← Slice.index_usize s i
-    let max1 ← if i2 > max
-                 then ok i2
-                 else ok max
-    let i3 ← i + 1#usize
-    ok (cont (max1, i3))
-  else ok (done max)
-
-/-- [e01::f_while::{impl core::ops::function::FnOnce<(), u8> for e01::f_while::{closure}<'_0>}::call_once]: loop 0:
-    Source: 'examples/e01/src/lib.rs', lines 84:4-89:5 -/
-@[rust_loop]
-def f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop
-  (s : Slice Std.U8) (max : Std.U8) (i : Std.Usize) : Result Std.U8 := do
-  loop
-    (fun (max1, i1) =>
-      f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop.body s
-      max1 i1)
-    (max, i)
-
-/-- [e01::f_while::{impl core::ops::function::FnOnce<(), u8> for e01::f_while::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-  (c : f_while.closure) (_ : Unit) : Result Std.U8 := do
-  f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once_loop c 0#u8
-    0#usize
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::FnOnce<(), u8> for e01::f_while::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8 :
-  core.ops.function.FnOnce f_while.closure Unit Std.U8 := {
-  call_once := f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once
-}
-
-/-- [e01::f_while::{closure#1}::{closure#1}::{impl core::ops::function::FnMut<(&'_0 u8,), bool> for e01::f_while::{closure#1}::{closure#1}::{closure}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 70:21-70:42 -/
-def
-  f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-  (c : f_while.closure_1.closure_1.closure) (tupled_args : Std.U8) :
-  Result (Bool × f_while.closure_1.closure_1.closure)
-  := do
-  let b ←
-    core.cmp.impls.PartialOrdShared.le core.cmp.PartialOrdU8 tupled_args c
-  ok (b, c)
-
-/-- [e01::f_while::{closure#1}::{closure#1}::{impl core::ops::function::FnOnce<(&'_0 u8,), bool> for e01::f_while::{closure#1}::{closure#1}::{closure}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 70:21-70:42 -/
-def
-  f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool.call_once
-  (c : f_while.closure_1.closure_1.closure) (i : Std.U8) : Result Bool := do
-  let (b, _) ←
-    f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-      c i
-  ok b
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{closure#1}::{impl core::ops::function::FnOnce<(&'_0 u8,), bool> for e01::f_while::{closure#1}::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 70:21-70:42 -/
-@[reducible]
-def
-  f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool
-  : core.ops.function.FnOnce f_while.closure_1.closure_1.closure Std.U8 Bool
-  := {
-  call_once :=
-    f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{closure#1}::{impl core::ops::function::FnMut<(&'_0 u8,), bool> for e01::f_while::{closure#1}::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 70:21-70:42 -/
-@[reducible]
-def
-  f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool
-  : core.ops.function.FnMut f_while.closure_1.closure_1.closure Std.U8 Bool
-  := {
-  FnOnceInst :=
-    f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleShared0U8Bool
-  call_mut :=
-    f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool.call_mut
-}
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f_while.closure_1.closure_1) (_ : Unit) : Result Bool := do
-  let (s, i) := c
-  let i1 ← core.slice.Slice.iter s
-  let (b, _) ←
-    core.slice.iter.Iter.Insts.CoreIterTraitsIteratorIteratorSharedAT.all
-      f_while.closure_1.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleShared0U8Bool
-      i1 i
-  ok b
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f_while.closure_1.closure_1) (_ : Unit) :
-  Result (Bool × f_while.closure_1.closure_1)
-  := do
-  let b ←
-    f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f_while.closure_1.closure_1) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c
-      ()
-  ok b
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-@[reducible]
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f_while.closure_1.closure_1 Unit Bool := {
-  call_once :=
-    f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-@[reducible]
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f_while.closure_1.closure_1 Unit Bool := {
-  FnOnceInst :=
-    f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::f_while::{closure#1}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 70:8-70:43 -/
-@[reducible]
-def f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f_while.closure_1.closure_1 Unit Bool := {
-  FnMutInst := f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f_while.closure_1.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_while::{closure#1}::{closure}}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-  (c : f_while.closure_1.closure) (tupled_args : Std.U8) : Result Unit := do
-  ok ()
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_while::{closure#1}::{closure}}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-  (state : f_while.closure_1.closure) (args : Std.U8) :
-  Result f_while.closure_1.closure
-  := do
-  f_while.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call state args
-  ok state
-
-/-- [e01::f_while::{closure#1}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_while::{closure#1}::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-  (c : f_while.closure_1.closure) (i : Std.U8) : Result Unit := do
-  let _ ←
-    f_while.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut c
-      i
-  ok ()
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_while::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple :
-  core.ops.function.FnOnce f_while.closure_1.closure Std.U8 Unit := {
-  call_once :=
-    f_while.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_while::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple :
-  core.ops.function.FnMut f_while.closure_1.closure Std.U8 Unit := {
-  FnOnceInst :=
-    f_while.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple
-  call_mut :=
-    f_while.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{closure#1}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_while::{closure#1}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple :
-  core.ops.function.Fn f_while.closure_1.closure Std.U8 Unit := {
-  FnMutInst := f_while.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple
-  call := f_while.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-}
-
-/-- [e01::f_while::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f_while.closure_1) (tupled_args : Std.U8) :
-  Result (Bool × Std.U8)
-  := do
-  let (b, _) := c
-  anodized.__.coerce_input
-    f_while.closure_1.closure.Insts.CoreOpsFunctionFnTupleU8Tuple ()
-    tupled_args
-  ok (b && true, tupled_args)
-
-/-- [e01::f_while::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f_while.closure_1) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f_while.closure_1)
-  := do
-  let p ←
-    f_while.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
-  ok (p, state)
-
-/-- [e01::f_while::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f_while.closure_1) (i : Std.U8) : Result (Bool × Std.U8) := do
-  let (p, _) ←
-    f_while.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
-  ok p
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f_while.closure_1 Std.U8 (Bool × Std.U8) := {
-  call_once :=
-    f_while.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f_while.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f_while.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut :=
-    f_while.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_while::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f_while.closure_1 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f_while.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f_while.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-}
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : f_while.closure_2.closure_1) (_ : Unit) : Result Bool := do
-  let (s, i) := c
-  let b ← core.slice.Slice.contains core.cmp.PartialEqU8 s i
-  let i1 := Slice.len s
-  ok (b = (i1 > 0#usize))
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : f_while.closure_2.closure_1) (_ : Unit) :
-  Result (Bool × f_while.closure_2.closure_1)
-  := do
-  let b ←
-    f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : f_while.closure_2.closure_1) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c
-      ()
-  ok b
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-@[reducible]
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce f_while.closure_2.closure_1 Unit Bool := {
-  call_once :=
-    f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-@[reducible]
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut f_while.closure_2.closure_1 Unit Bool := {
-  FnOnceInst :=
-    f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::Fn<(), bool> for e01::f_while::{closure#2}::{closure#1}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 71:8-71:43 -/
-@[reducible]
-def f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn f_while.closure_2.closure_1 Unit Bool := {
-  FnMutInst := f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnMutTupleBool
-  call := f_while.closure_2.closure_1.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_while::{closure#2}::{closure}}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-  (c : f_while.closure_2.closure) (tupled_args : Std.U8) : Result Unit := do
-  ok ()
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_while::{closure#2}::{closure}}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-  (state : f_while.closure_2.closure) (args : Std.U8) :
-  Result f_while.closure_2.closure
-  := do
-  f_while.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call state args
-  ok state
-
-/-- [e01::f_while::{closure#2}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_while::{closure#2}::{closure}}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-  (c : f_while.closure_2.closure) (i : Std.U8) : Result Unit := do
-  let _ ←
-    f_while.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut c
-      i
-  ok ()
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::FnOnce<(u8,), ()> for e01::f_while::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple :
-  core.ops.function.FnOnce f_while.closure_2.closure Std.U8 Unit := {
-  call_once :=
-    f_while.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::FnMut<(u8,), ()> for e01::f_while::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple :
-  core.ops.function.FnMut f_while.closure_2.closure Std.U8 Unit := {
-  FnOnceInst :=
-    f_while.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleU8Tuple
-  call_mut :=
-    f_while.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{closure#2}::{impl core::ops::function::Fn<(u8,), ()> for e01::f_while::{closure#2}::{closure}}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple :
-  core.ops.function.Fn f_while.closure_2.closure Std.U8 Unit := {
-  FnMutInst := f_while.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleU8Tuple
-  call := f_while.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple.call
-}
-
-/-- [e01::f_while::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-  (c : f_while.closure_2) (tupled_args : Std.U8) :
-  Result (Bool × Std.U8)
-  := do
-  let (b, _) := c
-  anodized.__.coerce_input
-    f_while.closure_2.closure.Insts.CoreOpsFunctionFnTupleU8Tuple ()
-    tupled_args
-  ok (b && true, tupled_args)
-
-/-- [e01::f_while::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-  (state : f_while.closure_2) (args : Std.U8) :
-  Result ((Bool × Std.U8) × f_while.closure_2)
-  := do
-  let p ←
-    f_while.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call state args
-  ok (p, state)
-
-/-- [e01::f_while::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-def f_while.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-  (c : f_while.closure_2) (i : Std.U8) : Result (Bool × Std.U8) := do
-  let (p, _) ←
-    f_while.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut c i
-  ok p
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8 :
-  core.ops.function.FnOnce f_while.closure_2 Std.U8 (Bool × Std.U8) := {
-  call_once :=
-    f_while.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once
-}
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8 :
-  core.ops.function.FnMut f_while.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnOnceInst := f_while.closure_2.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8
-  call_mut :=
-    f_while.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut
-}
-
-/-- Trait implementation: [e01::f_while::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::f_while::{closure#2}<'_0, '_1>}]
-    Source: 'examples/e01/src/lib.rs', lines 68:0-73:2 -/
-@[reducible]
-def f_while.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 :
-  core.ops.function.Fn f_while.closure_2 Std.U8 (Bool × Std.U8) := {
-  FnMutInst := f_while.closure_2.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8
-  call := f_while.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call
-}
-
-/-- [e01::f_while]:
-    Source: 'examples/e01/src/lib.rs', lines 74:0-91:1
-    Visibility: public -/
-def f_while (x : Slice Std.U8) : Result Std.U8 := do
-  let __anodized_output ←
-    anodized.__.eval_once f_while.closure.Insts.CoreOpsFunctionFnOnceTupleU8 x
-  let (__anodized_post, __anodized_output1) ←
-    anodized.__.apply_keep
-      f_while.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8 (true, x)
-      __anodized_output
-  let (__anodized_post1, __anodized_output2) ←
-    anodized.__.apply_keep
-      f_while.closure_2.Insts.CoreOpsFunctionFnTupleU8PairBoolU8
-      (__anodized_post, x) __anodized_output1
-  if __anodized_post1
-  then ok __anodized_output2
-  else ok __anodized_output2
-
-/-- [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::Fn<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}::call]:
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  (c : SpecS.predicate.closure) (_ : Unit) : Result Bool := do
-  ok (c.x > 0#u8)
-
-/-- [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::FnMut<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}::call_mut]:
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  (state : SpecS.predicate.closure) (_ : Unit) :
-  Result (Bool × SpecS.predicate.closure)
-  := do
-  let b ←
-    SpecS.predicate.closure.Insts.CoreOpsFunctionFnTupleBool.call state ()
-  ok (b, state)
-
-/-- [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::FnOnce<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}::call_once]:
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  (c : SpecS.predicate.closure) (_ : Unit) : Result Bool := do
-  let (b, _) ←
-    SpecS.predicate.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut c ()
-  ok b
-
-/-- Trait implementation: [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::FnOnce<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-@[reducible]
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnOnceTupleBool :
-  core.ops.function.FnOnce SpecS.predicate.closure Unit Bool := {
-  call_once :=
-    SpecS.predicate.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-}
-
-/-- Trait implementation: [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::FnMut<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-@[reducible]
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnMutTupleBool :
-  core.ops.function.FnMut SpecS.predicate.closure Unit Bool := {
-  FnOnceInst := SpecS.predicate.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  call_mut :=
-    SpecS.predicate.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-}
-
-/-- Trait implementation: [e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{impl core::ops::function::Fn<(), bool> for e01::{impl anodized_logic::types::Spec for e01::S}::predicate::{closure}<'_0>}]
-    Source: 'examples/e01/src/lib.rs', lines 96:15-96:25 -/
-@[reducible]
-def SpecS.predicate.closure.Insts.CoreOpsFunctionFnTupleBool :
-  core.ops.function.Fn SpecS.predicate.closure Unit Bool := {
-  FnMutInst := SpecS.predicate.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  call := SpecS.predicate.closure.Insts.CoreOpsFunctionFnTupleBool.call
-}
-
-/-- [e01::{impl anodized_logic::types::Spec for e01::S}::predicate]:
-    Source: 'examples/e01/src/lib.rs', lines 95:0-97:2
-    Visibility: public -/
-def S.Insts.Anodized_logicTypesSpec.predicate (self : S) : Result Bool := do
-  let b ←
-    anodized.__.eval SpecS.predicate.closure.Insts.CoreOpsFunctionFnTupleBool
-      self
-  ok (true && b)
-
-/-- Trait implementation: [e01::{impl anodized_logic::types::Spec for e01::S}]
-    Source: 'examples/e01/src/lib.rs', lines 95:0-97:2 -/
-@[reducible]
-def S.Insts.Anodized_logicTypesSpec : anodized_logic.types.Spec S := {
-  predicate := S.Insts.Anodized_logicTypesSpec.predicate
 }
 
 end e01

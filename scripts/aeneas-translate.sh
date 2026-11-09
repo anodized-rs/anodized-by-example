@@ -2,6 +2,12 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 root=$PWD
+# Cargo builds proc macros for the host; pass the cfg to both host and target.
+if [[ ${CARGO_ENCODED_RUSTFLAGS+x} ]]; then
+    export CARGO_ENCODED_RUSTFLAGS="${CARGO_ENCODED_RUSTFLAGS:+$CARGO_ENCODED_RUSTFLAGS$'\x1f'}--cfg"$'\x1f'"anodized_charon"$'\x1f'"--check-cfg=cfg(anodized_charon)"
+else
+    export RUSTFLAGS="${RUSTFLAGS:+$RUSTFLAGS }--cfg anodized_charon --check-cfg=cfg(anodized_charon)"
+fi
 tag=$(awk -F'"' '/^\[/{name=""} /^name = /{name=$2} /^rev = / && name=="aeneas"{print $2}' lakefile.toml)
 : "${tag:?no Aeneas revision in lakefile.toml}"
 [[ "$(.aeneas/aeneas -version 2>/dev/null || true)" == "aeneas $tag" && -x .aeneas/charon ]] || {
@@ -21,7 +27,8 @@ for manifest in examples/*/Cargo.toml; do
     llbc="$tmp/${crate//-/_}.llbc"
     subdir="$crate_dir/translation"
     echo "Translating $crate_dir"
-    (cd "$crate_dir" && "$root/.aeneas/charon" cargo --preset=aeneas --duplicate-defaulted-methods --dest-file "$llbc" -- --locked)
+    # Extract Anodized's specification helpers so Lean can reduce their bodies.
+    (cd "$crate_dir" && "$root/.aeneas/charon" cargo --preset=aeneas --duplicate-defaulted-methods --include 'anodized::__' --dest-file "$llbc" -- -Zhost-config -Ztarget-applies-to-host --config 'host.rustflags=["--cfg", "anodized_charon"]' --locked)
     [[ -f "$llbc" ]] || { echo "Charon did not produce $llbc" >&2; exit 1; }
     "$root/.aeneas/aeneas" "$llbc" -backend lean -dest "$tmp" -subdir "$subdir" -split-files -emit-json
     generated="$tmp/$subdir"

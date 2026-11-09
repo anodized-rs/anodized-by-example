@@ -1,18 +1,17 @@
 import examples.e02.translation.Funs
 
-/-! Binary search correctness, conditional on the behavior of the extracted
-Anodized helpers, consistent Rust comparison and equality, and soundness of
-the extracted sortedness check. These are explicit hypotheses of the final
-theorem; the sortedness check and helper models remain to be proved. -/
+/-! Binary search correctness, conditional on consistent Rust comparison and equality, soundness of
+the extracted sortedness check, and the extracted specification helper
+models. These are explicit hypotheses of the final theorem. -/
 
 open Aeneas Std Result
 open e02
 
 theorem bin_search_loop_body_done {T : Type} (ord : core.cmp.Ord T)
     (s : Aeneas.Std.Slice T) (v : T) (lo hi : Std.Usize) (h : ¬ lo < hi) :
-    bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body
+    bin_search_loop.body
       ord s v lo hi = ok (.done none) := by
-  simp [bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body, h]
+  simp [bin_search_loop.body, h]
 
 theorem midpoint_bounds (lo hi : Nat) (h : lo < hi) :
   lo ≤ lo + (hi - lo) / 2 ∧ lo + (hi - lo) / 2 < hi := by omega
@@ -20,12 +19,12 @@ theorem midpoint_bounds (lo hi : Nat) (h : lo < hi) :
 theorem bin_search_body_progress {T : Type} (ord : core.cmp.Ord T) (s : Aeneas.Std.Slice T) (v : T)
     (lo hi : Std.Usize) (bounds : lo.val < hi.val ∧ hi.val ≤ s.length)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ _ => True ⦄) :
-    (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body
+    (bin_search_loop.body
       ord s v lo hi) ⦃ r => match r with
       | .cont (l, h) => l.val ≤ h.val ∧ h.val ≤ s.length ∧ h.val - l.val < hi.val - lo.val
       | .done (some i) => i.val < s.length
       | .done none => False ⦄ := by
-  unfold bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body
+  unfold bin_search_loop.body
   step* <;> omega
 
 
@@ -33,9 +32,9 @@ theorem bin_search_loop_terminates {T : Type} (ord : core.cmp.Ord T)
     (s : Aeneas.Std.Slice T) (v : T) (lo hi : Std.Usize)
     (bounds : lo.val ≤ hi.val ∧ hi.val ≤ s.length)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ _ => True ⦄) :
-    (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop
+    (bin_search_loop
       ord s v lo hi) ⦃ _ => True ⦄ := by
-  unfold bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop
+  unfold bin_search_loop
   apply Std.loop.spec_decr_nat
     (measure := fun p => p.2.val - p.1.val)
     (inv := fun p => p.1.val ≤ p.2.val ∧ p.2.val ≤ s.length)
@@ -57,12 +56,12 @@ theorem bin_search_body_correct {T : Type} [LinearOrder T] [Inhabited T] (ord : 
     (sorted : ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
     (excluded : ∀ i, i < s.length → (i < lo.val ∨ hi.val ≤ i) → s[i]! ≠ v)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ o => (o = .lt → x < v) ∧ (o = .eq → x = v) ∧ (o = .gt → v < x) ⦄) :
-    (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body
+    (bin_search_loop.body
       ord s v lo hi) ⦃ r => match r with
       | .cont (l, h) => ∀ i, i < s.length → (i < l.val ∨ h.val ≤ i) → s[i]! ≠ v
       | .done (some i) => i.val < s.length ∧ s[i.val]! = v
       | .done none => False ⦄ := by
-  unfold bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop.body
+  unfold bin_search_loop.body
   step*
   all_goals simp_all
   · intro j hj hjout
@@ -93,14 +92,14 @@ theorem bin_search_loop_correct {T : Type} [LinearOrder T] [Inhabited T]
     (sorted : ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
     (excluded : ∀ i, i < s.length → (i < lo.val ∨ hi.val ≤ i) → s[i]! ≠ v)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ o => (o = .lt → x < v) ∧ (o = .eq → x = v) ∧ (o = .gt → v < x) ⦄) :
-    (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop
+    (bin_search_loop
       ord s v lo hi) ⦃ r => match r with
       | some i => i.val < s.length ∧ s[i.val]! = v
       | none => ∀ i, i < s.length → s[i]! ≠ v ⦄ := by
   have cmp_total (x : T) : (ord.cmp x v) ⦃ _ => True ⦄ := by
     apply Std.WP.spec_mono (cmp_ok x)
     intros; trivial
-  unfold bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once_loop
+  unfold bin_search_loop
   apply Std.loop.spec_decr_nat
     (measure := fun p => p.2.val - p.1.val)
     (inv := fun p => p.1.val ≤ p.2.val ∧ p.2.val ≤ s.length ∧
@@ -133,22 +132,13 @@ theorem bin_search_correct {T : Type} [LinearOrder T] [Inhabited T]
     (ord : core.cmp.Ord T) (s : Aeneas.Std.Slice T) (v : T)
     (sorted : ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ o => (o = .lt → x < v) ∧ (o = .eq → x = v) ∧ (o = .gt → v < x) ⦄)
-    (eval_model : anodized.__.eval_once
-      (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize ord) (s, v) =
-      bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once ord (s, v) ())
-    (keep_model : ∀ o, anodized.__.apply_keep
-      (bin_search.closure_2.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize ord)
-        (true, s, v) o = ok (true, o)) :
+    :
     (bin_search ord s v) ⦃ r => match r with
       | some i => i.val < s.length ∧ s[i.val]! = v
       | none => ∀ i, i < s.length → s[i]! ≠ v ⦄ := by
   unfold bin_search
-  rw [eval_model]
-  simp only [bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once]
-  apply Std.WP.spec_bind (bin_search_loop_correct ord s v 0#usize (Aeneas.Std.Slice.len s) (by simp) sorted (by simp [Aeneas.Std.Slice.length]; omega) cmp_ok)
-  intro r hr
-  rw [keep_model]
-  simpa using hr
+  exact bin_search_loop_correct ord s v 0#usize (Aeneas.Std.Slice.len s)
+    (by simp) sorted (by simp [Aeneas.Std.Slice.length]; omega) cmp_ok
 
 theorem contains_model_derived {T : Type} [DecidableEq T]
     (ord : core.cmp.Ord T) (s : Aeneas.Std.Slice T) (v : T)
@@ -168,26 +158,24 @@ theorem bin_search_contract {T : Type} [LinearOrder T] [Inhabited T]
       ∀ i j, i < s.length → j < s.length → i ≤ j → s[i]! ≤ s[j]!)
     (cmp_ok : ∀ x, (ord.cmp x v) ⦃ o => (o = .lt → x < v) ∧ (o = .eq → x = v) ∧ (o = .gt → v < x) ⦄)
     (eq_model : ∀ x y, ord.eqInst.partialEqInst.eq x y = ok (decide (x = y)))
-    (eval_model : anodized.__.eval_once
-      (bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize ord) (s, v) =
-      bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once ord (s, v) ())
-    (keep_model : ∀ o, anodized.__.apply_keep
-      (bin_search.closure_2.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize ord)
-        (true, s, v) o = ok (true, o)) :
+    (ensures_model : ∀ r, __anodized_fn_ensures_bin_search ord s v r =
+      __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
+        ord (r, s, v) ()) :
     (bin_search ord s v) ⦃ r =>
-      bin_search.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call ord (r, s, v) () = ok true ⦄ := by
-  apply Std.WP.spec_mono (bin_search_correct ord s v (sorted_sound pre) cmp_ok eval_model keep_model)
+      __anodized_fn_ensures_bin_search ord s v r = ok true ⦄ := by
+  apply Std.WP.spec_mono (bin_search_correct ord s v (sorted_sound pre) cmp_ok)
   intro r hr
+  rw [ensures_model]
   cases r with
   | some i =>
-    simp only [bin_search.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call]
+    simp only [__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call]
     change (if i < Aeneas.Std.Slice.len s then (do let x ← s.index_usize i; ord.eqInst.partialEqInst.eq x v) else ok false) = ok true
     have hi : i < Aeneas.Std.Slice.len s := by scalar_tac
     simp only [hi, ↓reduceIte]
     simp [Aeneas.Std.Slice.index_usize, eq_model] at *
     simp_all
   | none =>
-    simp only [bin_search.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call]
+    simp only [__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call]
     change (do let b ← core.slice.Slice.contains ord.eqInst.partialEqInst s v; ok (!b)) = ok true
     rw [contains_model_derived ord s v eq_model]
     simp

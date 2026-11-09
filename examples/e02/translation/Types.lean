@@ -20,22 +20,34 @@ set_option maxRecDepth 2048
 
 namespace e02
 
-/-- [e02::bin_search::{closure#1}]
-    Source: 'examples/e02/src/lib.rs', lines 3:0-10:2 -/
-def bin_search.closure_1 (T : Type _) := Slice T × T
+/-- [e02::__anodized_fn_ensures_bin_search::{closure}]
+    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+@[reducible]
+def __anodized_fn_ensures_bin_search.closure (T : Type _) := Option Std.Usize
 
-/-- [e02::bin_search::{closure#2}]
-    Source: 'examples/e02/src/lib.rs', lines 3:0-10:2 -/
-def bin_search.closure_2 (T : Type _) := Bool × Slice T × T
-
-/-- [e02::bin_search::{closure#2}::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 6:22-9:5 -/
-def bin_search.closure_2.closure (T : Type _) :=
-  Option Std.Usize × Slice T × T
+/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}]
+    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+def __anodized_fn_ensures_bin_search.closure_1 (T : Type _) :=
+  Bool × Slice T × T
 
 /-- [e02::bin_search::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 5:14-5:34 -/
+    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
-def bin_search.closure (T : Type _) := Slice T
+def bin_search.closure (T : Type _) := Unit
+
+/-- [e02::bin_search::{closure#1}]
+    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+@[reducible]
+def bin_search.closure_1 (T : Type _) := Unit
+
+/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}]
+    Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
+def __anodized_fn_ensures_bin_search.closure_1.closure (T : Type _) :=
+  Option Std.Usize × Slice T × T
+
+/-- [e02::__anodized_fn_requires_bin_search::{closure}]
+    Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
+@[reducible]
+def __anodized_fn_requires_bin_search.closure (T : Type _) := Slice T
 
 end e02
