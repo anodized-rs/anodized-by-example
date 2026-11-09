@@ -32,6 +32,6 @@ unchanged, and builds the Lean libraries and proofs.
 
 The Lean build checks the stated theorems against the generated translation and
 its external assumptions; it does not prove every Rust item. In particular,
-`Proofs/e02.lean` contains an intentional `sorry` for the Collatz example, and
-`Proofs/IntExternal.lean` and `Proofs/SliceIterExternal.lean` state axioms for
-external operations. These assumptions are part of the trust boundary.
+the binary-search proof in `Proofs/e02.lean` is incomplete, and
+`Proofs/SliceIterExternal.lean` states axioms for external operations. These
+assumptions are part of the trust boundary.
