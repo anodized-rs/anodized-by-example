@@ -19,67 +19,12 @@ noncomputable section
 
 namespace e02
 
-/-- Trait implementation: [anodized_logic::arithmetic::{impl core::cmp::PartialEq<i32> for anodized_logic::arithmetic::int}]
-    Source: '/cargo/git/checkouts/anodized-c4166da61bc74ac3/f7e8e56/crates/anodized-logic/src/arithmetic/interop.rs', lines 221:8-221:67
-    Name pattern: [core::cmp::PartialEq<anodized_logic::arithmetic::int, i32>] -/
-@[reducible, rust_trait_impl
-  "core::cmp::PartialEq<anodized_logic::arithmetic::int, i32>"]
-def anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqI32 :
-  core.cmp.PartialEq anodized_logic.arithmetic.int Std.I32 := {
-  eq := anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqI32.eq
-}
-
-/-- Trait implementation: [anodized_logic::arithmetic::{impl core::cmp::PartialOrd<i32> for anodized_logic::arithmetic::int}]
-    Source: '/cargo/git/checkouts/anodized-c4166da61bc74ac3/f7e8e56/crates/anodized-logic/src/arithmetic/interop.rs', lines 239:8-239:68
-    Name pattern: [core::cmp::PartialOrd<anodized_logic::arithmetic::int, i32>] -/
-@[reducible, rust_trait_impl
-  "core::cmp::PartialOrd<anodized_logic::arithmetic::int, i32>"]
-impl_def anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32 :
-  core.cmp.PartialOrd anodized_logic.arithmetic.int Std.I32 := {
-  partialEqInst := anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqI32
-  partial_cmp :=
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32.partial_cmp
-  le := core.cmp.PartialOrd.le.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32
-  gt := core.cmp.PartialOrd.gt.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32
-}
-
-/-- Trait implementation: [anodized_logic::arithmetic::{impl core::cmp::PartialEq<anodized_logic::arithmetic::int> for anodized_logic::arithmetic::int}]
-    Source: '/cargo/git/checkouts/anodized-c4166da61bc74ac3/f7e8e56/crates/anodized-logic/src/arithmetic.rs', lines 4:27-4:36
-    Name pattern: [core::cmp::PartialEq<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int>] -/
-@[reducible, rust_trait_impl
-  "core::cmp::PartialEq<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int>"]
-def anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint :
-  core.cmp.PartialEq anodized_logic.arithmetic.int
-  anodized_logic.arithmetic.int := {
-  eq := anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint.eq
-}
-
-/-- Trait implementation: [anodized_logic::arithmetic::{impl core::cmp::PartialOrd<anodized_logic::arithmetic::int> for anodized_logic::arithmetic::int}]
-    Source: '/cargo/git/checkouts/anodized-c4166da61bc74ac3/f7e8e56/crates/anodized-logic/src/arithmetic.rs', lines 4:43-4:53
-    Name pattern: [core::cmp::PartialOrd<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int>] -/
-@[reducible, rust_trait_impl
-  "core::cmp::PartialOrd<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int>"]
-impl_def anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint :
-  core.cmp.PartialOrd anodized_logic.arithmetic.int
-  anodized_logic.arithmetic.int := {
-  partialEqInst := anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint
-  partial_cmp :=
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint.partial_cmp
-  le := core.cmp.PartialOrd.le.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint
-  gt := core.cmp.PartialOrd.gt.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint
-}
-
 /-- [e02::__anodized_fn_requires_collatz::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_collatz::closure<'_0>}::call]:
     Source: 'examples/e02/src/lib.rs', lines 4:0-7:2 -/
 def
   __anodized_fn_requires_collatz.closure.Insts.CoreOpsFunctionFnTupleBool.call
   (c : __anodized_fn_requires_collatz.closure) (_ : Unit) : Result Bool := do
-  core.cmp.PartialOrd.gt.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32 c 0#i32
+  anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32.gt c 0#i32
 
 /-- [e02::__anodized_fn_requires_collatz::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_collatz::closure<'_0>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 4:0-7:2 -/
@@ -254,9 +199,7 @@ def collatz_loop.body
   Result (ControlFlow anodized_logic.arithmetic.int
     anodized_logic.arithmetic.int)
   := do
-  let b ←
-    core.cmp.PartialOrd.gt.default
-      anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32 n 1#i32
+  let b ← anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdI32.gt n 1#i32
   if b
   then let n1 ← f n
        ok (cont n1)
@@ -458,8 +401,7 @@ def __anodized_fn_requires_add.closure.Insts.CoreOpsFunctionFnTupleBool.call
   let i4 ←
     anodized_logic.arithmetic.int.Insts.CoreOpsArithAddintint.add i2 i3
   let i5 ← anodized_logic.arithmetic.int.Insts.CoreConvertFromU8.from 255#u8
-  core.cmp.PartialOrd.le.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint i4 i5
+  anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint.le i4 i5
 
 /-- [e02::__anodized_fn_requires_add::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_add::closure<'_0, '_1>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 36:0-39:2 -/
@@ -616,8 +558,7 @@ def __anodized_fn_requires_sub.closure.Insts.CoreOpsFunctionFnTupleBool.call
   let (i, i1) := c
   let i2 ← anodized_logic.arithmetic.int.Insts.CoreConvertFromU8.from i
   let i3 ← anodized_logic.arithmetic.int.Insts.CoreConvertFromU8.from i1
-  core.cmp.PartialOrd.le.default
-    anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint i2 i3
+  anodized_logic.arithmetic.int.Insts.CoreCmpPartialOrdint.le i2 i3
 
 /-- [e02::__anodized_fn_requires_sub::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_sub::closure<'_0, '_1>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 44:0-47:2 -/

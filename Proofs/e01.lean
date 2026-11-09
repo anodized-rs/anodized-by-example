@@ -180,17 +180,21 @@ private theorem f_loop_loop_spec (x : Slice Std.U8) :
     · step*
       · -- cont, `x[i] > max`: accumulator becomes the element just read, so it is in `x`.
         rename_i hoi hmax
+        simp only [hlt, ↓reduceIte] at o_post1
+        obtain ⟨o_post1, o_start⟩ := o_post1
         obtain rfl : i = iter.start := Option.some.inj (hoi.symm.trans o_post1)
-        refine ⟨by simp [o_post3, hend], by omega, ?_, Or.inr ?_, by omega⟩
-        · simp only [o_post2]
+        refine ⟨by simp [o_post2, hend], by omega, ?_, Or.inr ?_, by omega⟩
+        · simp only [o_start]
           exact forall_index_succ hinv (by scalar_tac) (by simp_lists [i1_post]; scalar_tac)
         · rw [i1_post]
           exact List.getElem_mem _
       · -- cont, `x[i] ≤ max`: accumulator unchanged, so its disjunct carries over.
         rename_i hoi hmax
+        simp only [hlt, ↓reduceIte] at o_post1
+        obtain ⟨o_post1, o_start⟩ := o_post1
         obtain rfl : i = iter.start := Option.some.inj (hoi.symm.trans o_post1)
-        refine ⟨by simp [o_post3, hend], by omega, ?_, hmem, by omega⟩
-        simp only [o_post2]
+        refine ⟨by simp [o_post2, hend], by omega, ?_, hmem, by omega⟩
+        simp only [o_start]
         exact forall_index_succ hinv (by scalar_tac) (by simp_lists [i1_post]; scalar_tac)
     · push Not at *
       step with Std.core.iter.range.IteratorRange.next_Usize_spec_none
