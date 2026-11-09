@@ -21,15 +21,15 @@ set_option maxRecDepth 2048
 namespace e02
 
 /-- [e02::bin_search::{closure#1}]
-    Source: 'examples/e02/src/lib.rs', lines 3:0-11:2 -/
+    Source: 'examples/e02/src/lib.rs', lines 3:0-10:2 -/
 def bin_search.closure_1 (T : Type _) := Slice T × T
 
 /-- [e02::bin_search::{closure#2}]
-    Source: 'examples/e02/src/lib.rs', lines 3:0-11:2 -/
+    Source: 'examples/e02/src/lib.rs', lines 3:0-10:2 -/
 def bin_search.closure_2 (T : Type _) := Bool × Slice T × T
 
 /-- [e02::bin_search::{closure#2}::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 6:22-10:5 -/
+    Source: 'examples/e02/src/lib.rs', lines 6:22-9:5 -/
 def bin_search.closure_2.closure (T : Type _) :=
   Option Std.Usize × Slice T × T
 
