@@ -21,7 +21,7 @@ for manifest in examples/*/Cargo.toml; do
     llbc="$tmp/${crate//-/_}.llbc"
     subdir="$crate_dir/translation"
     echo "Translating $crate_dir"
-    (cd "$crate_dir" && "$root/.aeneas/charon" cargo --preset=aeneas --dest "$tmp" -- --locked)
+    (cd "$crate_dir" && "$root/.aeneas/charon" cargo --preset=aeneas --dest-file "$llbc" -- --locked)
     [[ -f "$llbc" ]] || { echo "Charon did not produce $llbc" >&2; exit 1; }
     "$root/.aeneas/aeneas" "$llbc" -backend lean -dest "$tmp" -subdir "$subdir" -split-files -emit-json
     generated="$tmp/$subdir"
