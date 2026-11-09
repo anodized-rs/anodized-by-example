@@ -5,7 +5,7 @@ use anodized::spec;
 #[spec(requires: x > 0)]
 pub fn f1(x: u8) {}
 
-#[spec(ensures: *output == 1)]
+#[spec(ensures: |output| output == 1)]
 pub fn f2() -> u8 {
     1
 }
@@ -14,7 +14,7 @@ pub fn f2() -> u8 {
 // The postcondition `*output < x` is a total comparison (no fallible ops in the predicate).
 #[spec(
     requires: x > 0,
-    ensures: *output < x,
+    ensures: |output| output < x,
 )]
 pub fn f4(x: u8) -> u8 {
     x - 1
@@ -26,7 +26,7 @@ pub fn f4(x: u8) -> u8 {
 pub trait T {
     #[spec(
         requires: x > 0,
-        ensures: *output > 0,
+        ensures: |output| output > 0,
     )]
     fn f3(x: u8) -> u8;
 }
@@ -35,7 +35,7 @@ pub trait T {
 impl T for u8 {
     #[spec(
         requires: true,
-        ensures: *output > 1,
+        ensures: |output| output > 1,
     )]
     fn f3(x: u8) -> u8 {
         2
@@ -45,7 +45,7 @@ impl T for u8 {
 // Loop invariants
 
 #[spec(
-    ensures: [
+    ensures: |ref output| [
         x.iter().all(|item| item <= output),
         x.contains(output) == (x.len() > 0),
     ],
@@ -66,7 +66,7 @@ pub fn f_loop(x: &[u8]) -> u8 {
 // While loop termination
 
 #[spec(
-    ensures: [
+    ensures: |ref output| [
         x.iter().all(|item| item <= output),
         x.contains(output) == (x.len() > 0),
     ],

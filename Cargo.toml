@@ -1,12 +1,6 @@
 [workspace]
 resolver = "2"
-members = [
-    "examples/e01",
-    "examples/e02",
-]
+members = ["examples/e01", "examples/e02"]
 
 [workspace.dependencies]
-anodized = {
-    git = "https://github.com/anodized-rs/anodized.git",
-    branch = "feat-aeneas-integration",
-}
+anodized = "0.8.0"
