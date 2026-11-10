@@ -21,7 +21,6 @@ if [[ "$("$bundle/aeneas" -version 2>/dev/null || true)" != "aeneas $tag" ]] || 
 fi
 (cd "$bundle" && rustup toolchain install --no-self-update)
 lean_toolchain="$project/lean-toolchain"
-[[ -f "$lean_toolchain" ]] || lean_toolchain="$root/lean-toolchain"
 if ! cmp -s "$lean_toolchain" "$bundle/backends/lean/lean-toolchain"; then
     echo 'Lean toolchain differs from the pinned Aeneas release; update lean-toolchain and lake-manifest.json.' >&2
     exit 1
