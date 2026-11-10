@@ -21,32 +21,32 @@ set_option maxRecDepth 2048
 namespace e02
 
 /-- [e02::__anodized_fn_ensures_bin_search::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+    Source: 'e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def __anodized_fn_ensures_bin_search.closure := Option Std.Usize
 
 /-- [e02::__anodized_fn_ensures_bin_search::{closure#1}]
-    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+    Source: 'e02/src/lib.rs', lines 6:0-13:2 -/
 def __anodized_fn_ensures_bin_search.closure_1 :=
   Bool × Slice Std.I32 × Std.I32
 
 /-- [e02::bin_search::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+    Source: 'e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def bin_search.closure := Unit
 
 /-- [e02::bin_search::{closure#1}]
-    Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
+    Source: 'e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def bin_search.closure_1 := Unit
 
 /-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
+    Source: 'e02/src/lib.rs', lines 9:22-12:5 -/
 def __anodized_fn_ensures_bin_search.closure_1.closure :=
   Option Std.Usize × Slice Std.I32 × Std.I32
 
 /-- [e02::__anodized_fn_requires_bin_search::{closure}]
-    Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
+    Source: 'e02/src/lib.rs', lines 8:14-8:34 -/
 @[reducible]
 def __anodized_fn_requires_bin_search.closure := Slice Std.I32
 

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-tag=$(awk -F'"' '/^\[/{name=""} /^name = /{name=$2} /^rev = / && name=="aeneas"{print $2}' lakefile.toml)
-: "${tag:?no Aeneas revision in lakefile.toml}"
+source scripts/aeneas-pin.sh
 asset=aeneas-$(uname -sm | tr 'A-Z ' 'a-z-' | sed 's/darwin/macos/; s/arm64/aarch64/').tar.gz
 if [[ "$(.aeneas/aeneas -version 2>/dev/null || true)" != "aeneas $tag" ]] || [[ ! -x .aeneas/charon ]]; then
     rm -rf .aeneas

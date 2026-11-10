@@ -1,0 +1,16 @@
+name = "e01"
+defaultTargets = ["e01"]
+
+[leanOptions]
+linter.style.nameCheck = false
+
+[[require]]
+name = "aeneas"
+git = "https://github.com/AeneasVerif/aeneas.git"
+subDir = "backends/lean"
+rev = "nightly-2026.11.09-5a392f4"
+
+[[lean_lib]]
+name = "e01"
+srcDir = ".."
+globs = ["e01.Anodized", "e01.Obligations", "e01.Proofs", "e01.translation.+"]

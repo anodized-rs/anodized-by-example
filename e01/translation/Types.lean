@@ -21,70 +21,70 @@ set_option maxRecDepth 2048
 namespace e01
 
 /-- [e01::__anodized_fn_ensures_f1::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 8:0-8:24 -/
+    Source: 'e01/src/lib.rs', lines 8:0-8:24 -/
 @[reducible]
 def __anodized_fn_ensures_f1.closure := Unit
 
 /-- [e01::__anodized_fn_requires_f1::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 8:17-8:22 -/
+    Source: 'e01/src/lib.rs', lines 8:17-8:22 -/
 @[reducible]
 def __anodized_fn_requires_f1.closure := Std.U8
 
 /-- [e01::__anodized_fn_ensures_f2::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+    Source: 'e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
 def __anodized_fn_ensures_f2.closure := Std.U8
 
 /-- [e01::__anodized_fn_ensures_f2::{closure#1}]
-    Source: 'examples/e01/src/lib.rs', lines 11:0-11:38 -/
+    Source: 'e01/src/lib.rs', lines 11:0-11:38 -/
 @[reducible]
 def __anodized_fn_ensures_f2.closure_1 := Bool
 
 /-- [e01::__anodized_fn_ensures_f2::{closure#1}::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 11:25-11:36 -/
+    Source: 'e01/src/lib.rs', lines 11:25-11:36 -/
 @[reducible]
 def __anodized_fn_ensures_f2.closure_1.closure := Std.U8
 
 /-- [e01::__anodized_fn_ensures_f4::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+    Source: 'e01/src/lib.rs', lines 18:0-21:2 -/
 @[reducible]
 def __anodized_fn_ensures_f4.closure := Std.U8
 
 /-- [e01::__anodized_fn_ensures_f4::{closure#1}]
-    Source: 'examples/e01/src/lib.rs', lines 18:0-21:2 -/
+    Source: 'e01/src/lib.rs', lines 18:0-21:2 -/
 def __anodized_fn_ensures_f4.closure_1 := Bool × Std.U8
 
 /-- [e01::__anodized_fn_ensures_f4::{closure#1}::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 20:22-20:32 -/
+    Source: 'e01/src/lib.rs', lines 20:22-20:32 -/
 def __anodized_fn_ensures_f4.closure_1.closure := Std.U8 × Std.U8
 
 /-- [e01::__anodized_fn_requires_f4::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 19:14-19:19 -/
+    Source: 'e01/src/lib.rs', lines 19:14-19:19 -/
 @[reducible]
 def __anodized_fn_requires_f4.closure := Std.U8
 
 /-- [e01::T::__anodized_fn_ensures_f3::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+    Source: 'e01/src/lib.rs', lines 28:0-28:7 -/
 @[reducible]
 def T.__anodized_fn_ensures_f3.closure (Self : Type _) := Std.U8
 
 /-- [e01::T::__anodized_fn_ensures_f3::{closure#1}]
-    Source: 'examples/e01/src/lib.rs', lines 28:0-28:7 -/
+    Source: 'e01/src/lib.rs', lines 28:0-28:7 -/
 @[reducible]
 def T.__anodized_fn_ensures_f3.closure_1 (Self : Type _) := Bool
 
 /-- [e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 32:26-32:36 -/
+    Source: 'e01/src/lib.rs', lines 32:26-32:36 -/
 @[reducible]
 def T.__anodized_fn_ensures_f3.closure_1.closure (Self : Type _) := Std.U8
 
 /-- [e01::T::__anodized_fn_requires_f3::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 31:18-31:23 -/
+    Source: 'e01/src/lib.rs', lines 31:18-31:23 -/
 @[reducible]
 def T.__anodized_fn_requires_f3.closure (Self : Type _) := Std.U8
 
 /-- Trait declaration: [e01::T]
-    Source: 'examples/e01/src/lib.rs', lines 29:0-35:1
+    Source: 'e01/src/lib.rs', lines 29:0-35:1
     Visibility: public -/
 structure T (Self : Type _) where
   __anodized_fn_qualifiers_trait_f3 : Result Std.U32
@@ -94,22 +94,22 @@ structure T (Self : Type _) where
   f3 : Std.U8 → Result Std.U8
 
 /-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+    Source: 'e01/src/lib.rs', lines 37:0-37:7 -/
 @[reducible]
 def TU8.__anodized_fn_ensures_f3.closure := Std.U8
 
 /-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}]
-    Source: 'examples/e01/src/lib.rs', lines 37:0-37:7 -/
+    Source: 'e01/src/lib.rs', lines 37:0-37:7 -/
 @[reducible]
 def TU8.__anodized_fn_ensures_f3.closure_1 := Bool
 
 /-- [e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 41:26-41:36 -/
+    Source: 'e01/src/lib.rs', lines 41:26-41:36 -/
 @[reducible]
 def TU8.__anodized_fn_ensures_f3.closure_1.closure := Std.U8
 
 /-- [e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}]
-    Source: 'examples/e01/src/lib.rs', lines 40:18-40:22 -/
+    Source: 'e01/src/lib.rs', lines 40:18-40:22 -/
 @[reducible]
 def TU8.__anodized_fn_requires_f3.closure := Unit
 

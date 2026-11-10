@@ -1,5 +1,5 @@
-import Obligations
-import Anodized
+import e01.Obligations
+import e01.Anodized
 
 open Aeneas Std.Result
 open e01
@@ -19,4 +19,3 @@ theorem f4_spec : Obligations.e01_f4 := by
   simp only [step_simps] at hx
   unfold f4
   step*
-

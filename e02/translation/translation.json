@@ -6,7 +6,7 @@
     {
       "def_id": 27,
       "lean_name": "e02.anodized.__.apply_keep",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "anodized::__::apply_keep",
       "is_local": false,
       "source": {
@@ -23,7 +23,7 @@
     {
       "def_id": 25,
       "lean_name": "e02.anodized.__.eval",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "anodized::__::eval",
       "is_local": false,
       "source": {
@@ -40,7 +40,7 @@
     {
       "def_id": 26,
       "lean_name": "e02.anodized.__.eval_once",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "anodized::__::eval_once",
       "is_local": false,
       "source": {
@@ -57,14 +57,10 @@
     {
       "def_id": 35,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0>}::call_once",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -74,14 +70,10 @@
     {
       "def_id": 198,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -91,14 +83,10 @@
     {
       "def_id": 205,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call_mut",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -108,14 +96,10 @@
     {
       "def_id": 204,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call_once",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -125,14 +109,10 @@
     {
       "def_id": 36,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -142,14 +122,10 @@
     {
       "def_id": 148,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize.call_mut",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call_mut",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -159,14 +135,10 @@
     {
       "def_id": 147,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize.call_once",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call_once",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -176,11 +148,11 @@
     {
       "def_id": 22,
       "lean_name": "e02.slice_is_sorted_loop.body",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::slice_is_sorted",
       "is_local": true,
       "source": {
-        "file": "examples/e02/src/lib.rs",
+        "file": "e02/src/lib.rs",
         "begin_line": 30,
         "end_line": 36
       },
@@ -195,11 +167,11 @@
     {
       "def_id": 22,
       "lean_name": "e02.slice_is_sorted_loop",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::slice_is_sorted",
       "is_local": true,
       "source": {
-        "file": "examples/e02/src/lib.rs",
+        "file": "e02/src/lib.rs",
         "begin_line": 30,
         "end_line": 36
       },
@@ -214,11 +186,11 @@
     {
       "def_id": 22,
       "lean_name": "e02.slice_is_sorted",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::slice_is_sorted",
       "is_local": true,
       "source": {
-        "file": "examples/e02/src/lib.rs",
+        "file": "e02/src/lib.rs",
         "begin_line": 29,
         "end_line": 36
       },
@@ -231,14 +203,10 @@
     {
       "def_id": 34,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": true,
@@ -248,14 +216,10 @@
     {
       "def_id": 145,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call_mut",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": true,
@@ -265,14 +229,10 @@
     {
       "def_id": 144,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call_once",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": true,
@@ -282,14 +242,10 @@
     {
       "def_id": 19,
       "lean_name": "e02.__anodized_fn_requires_bin_search",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -299,14 +255,10 @@
     {
       "def_id": 20,
       "lean_name": "e02.__anodized_fn_ensures_bin_search",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -316,14 +268,10 @@
     {
       "def_id": 37,
       "lean_name": "e02.bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::bin_search::{impl core::ops::function::Fn<(), bool> for e02::bin_search::{closure}}::call",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -333,14 +281,10 @@
     {
       "def_id": 38,
       "lean_name": "e02.bin_search.closure_1.Insts.CoreOpsFunctionFnTupleTuple.call",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::bin_search::{impl core::ops::function::Fn<(), ()> for e02::bin_search::{closure#1}}::call",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": false,
@@ -350,14 +294,10 @@
     {
       "def_id": 21,
       "lean_name": "e02.bin_search_loop.body",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::bin_search",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 27
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 27 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": true,
@@ -369,14 +309,10 @@
     {
       "def_id": 21,
       "lean_name": "e02.bin_search_loop",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::bin_search",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 27
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 27 },
       "is_opaque": false,
       "can_fail": true,
       "can_diverge": true,
@@ -388,11 +324,11 @@
     {
       "def_id": 21,
       "lean_name": "e02.bin_search",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::bin_search",
       "is_local": true,
       "source": {
-        "file": "examples/e02/src/lib.rs",
+        "file": "e02/src/lib.rs",
         "begin_line": 14,
         "end_line": 27
       },
@@ -407,88 +343,60 @@
     {
       "def_id": 7,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 }
     },
     {
       "def_id": 8,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 }
     },
     {
       "def_id": 9,
       "lean_name": "e02.bin_search.closure",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::bin_search::{closure}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 }
     },
     {
       "def_id": 10,
       "lean_name": "e02.bin_search.closure_1",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::bin_search::{closure#1}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 }
     },
     {
       "def_id": 46,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 }
     },
     {
       "def_id": 6,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure",
-      "lean_file": "examples/e02/translation/Types.lean",
+      "lean_file": "e02/translation/Types.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{closure}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      }
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 }
     }
   ],
   "globals": [
     {
       "def_id": 6,
       "lean_name": "e02.__anodized_fn_qualifiers_bin_search",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_qualifiers_bin_search",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "can_fail": false
     }
   ],
@@ -497,14 +405,10 @@
     {
       "def_id": 8,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "impl_trait_def_id": 7,
       "impl_trait_rust_name": "core::ops::function::FnOnce",
       "impl_trait_is_builtin": true
@@ -512,14 +416,10 @@
     {
       "def_id": 39,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "impl_trait_def_id": 7,
       "impl_trait_rust_name": "core::ops::function::FnOnce",
       "impl_trait_is_builtin": true
@@ -527,14 +427,10 @@
     {
       "def_id": 40,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "impl_trait_def_id": 10,
       "impl_trait_rust_name": "core::ops::function::FnMut",
       "impl_trait_is_builtin": true
@@ -542,14 +438,10 @@
     {
       "def_id": 35,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 9,
-        "end_line": 12
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 9, "end_line": 12 },
       "impl_trait_def_id": 5,
       "impl_trait_rust_name": "core::ops::function::Fn",
       "impl_trait_is_builtin": true
@@ -557,14 +449,10 @@
     {
       "def_id": 20,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "impl_trait_def_id": 7,
       "impl_trait_rust_name": "core::ops::function::FnOnce",
       "impl_trait_is_builtin": true
@@ -572,14 +460,10 @@
     {
       "def_id": 21,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "impl_trait_def_id": 10,
       "impl_trait_rust_name": "core::ops::function::FnMut",
       "impl_trait_is_builtin": true
@@ -587,14 +471,10 @@
     {
       "def_id": 11,
       "lean_name": "e02.__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 6,
-        "end_line": 13
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 6, "end_line": 13 },
       "impl_trait_def_id": 5,
       "impl_trait_rust_name": "core::ops::function::Fn",
       "impl_trait_is_builtin": true
@@ -602,14 +482,10 @@
     {
       "def_id": 17,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "impl_trait_def_id": 7,
       "impl_trait_rust_name": "core::ops::function::FnOnce",
       "impl_trait_is_builtin": true
@@ -617,14 +493,10 @@
     {
       "def_id": 18,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "impl_trait_def_id": 10,
       "impl_trait_rust_name": "core::ops::function::FnMut",
       "impl_trait_is_builtin": true
@@ -632,14 +504,10 @@
     {
       "def_id": 6,
       "lean_name": "e02.__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "examples/e02/translation/Funs.lean",
+      "lean_file": "e02/translation/Funs.lean",
       "rust_name": "e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}",
       "is_local": true,
-      "source": {
-        "file": "examples/e02/src/lib.rs",
-        "begin_line": 8,
-        "end_line": 8
-      },
+      "source": { "file": "e02/src/lib.rs", "begin_line": 8, "end_line": 8 },
       "impl_trait_def_id": 5,
       "impl_trait_rust_name": "core::ops::function::Fn",
       "impl_trait_is_builtin": true
