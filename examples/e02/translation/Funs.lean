@@ -273,10 +273,11 @@ def slice_is_sorted_loop.body
     let i1 ← i - 1#usize
     let t ← Slice.index_usize seq i1
     let t1 ← Slice.index_usize seq i
-    let b ← corecmpOrdInst.partialOrdInst.gt t t1
-    if b
-    then ok (done false)
-    else ok (cont iter1)
+    let o1 ← corecmpOrdInst.cmp t t1
+    match o1 with
+    | Ordering.lt => ok (cont iter1)
+    | Ordering.eq => ok (cont iter1)
+    | Ordering.gt => ok (done false)
 
 /-- [e02::slice_is_sorted]: loop 0:
     Source: 'examples/e02/src/lib.rs', lines 30:4-36:1 -/

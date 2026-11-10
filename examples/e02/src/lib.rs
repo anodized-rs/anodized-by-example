@@ -28,7 +28,7 @@ pub fn bin_search<T: Ord>(seq: &[T], value: &T) -> Option<usize> {
 
 fn slice_is_sorted<T: Ord>(seq: &[T]) -> bool {
     for i in 1..seq.len() {
-        if seq[i - 1] > seq[i] {
+        if let std::cmp::Ordering::Greater = seq[i - 1].cmp(&seq[i]) {
             return false;
         }
     }
