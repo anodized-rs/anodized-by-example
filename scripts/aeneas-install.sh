@@ -1,15 +1,28 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$(dirname "$0")/.."
-source scripts/aeneas-pin.sh
-asset=aeneas-$(uname -sm | tr 'A-Z ' 'a-z-' | sed 's/darwin/macos/; s/arm64/aarch64/').tar.gz
-if [[ "$(.aeneas/aeneas -version 2>/dev/null || true)" != "aeneas $tag" ]] || [[ ! -x .aeneas/charon ]]; then
-    rm -rf .aeneas
-    mkdir -p .aeneas
-    curl -fsSL --proto '=https' "https://github.com/AeneasVerif/aeneas/releases/download/$tag/$asset" | tar -xz -C .aeneas
+root=$(cd "$(dirname "$0")/.." && pwd)
+if [[ $# != 1 ]]; then
+    echo "Usage: $0 <project-directory>" >&2
+    exit 1
 fi
-(cd .aeneas && rustup toolchain install --no-self-update)
-if ! cmp -s lean-toolchain .aeneas/backends/lean/lean-toolchain; then
+project=$(cd "$1" && pwd)
+[[ -f "$project/lakefile.toml" ]] || {
+    echo "Project must contain lakefile.toml: $project" >&2
+    exit 1
+}
+tag=$(awk -F'"' '/^\[/{name=""} /^name = /{name=$2} /^rev = / && name=="aeneas"{print $2}' "$project/lakefile.toml")
+: "${tag:?no Aeneas revision in $project/lakefile.toml}"
+bundle="$project/.aeneas"
+asset=aeneas-$(uname -sm | tr 'A-Z ' 'a-z-' | sed 's/darwin/macos/; s/arm64/aarch64/').tar.gz
+if [[ "$("$bundle/aeneas" -version 2>/dev/null || true)" != "aeneas $tag" ]] || [[ ! -x "$bundle/charon" ]]; then
+    rm -rf "$bundle"
+    mkdir -p "$bundle"
+    curl -fsSL --proto '=https' "https://github.com/AeneasVerif/aeneas/releases/download/$tag/$asset" | tar -xz -C "$bundle"
+fi
+(cd "$bundle" && rustup toolchain install --no-self-update)
+lean_toolchain="$project/lean-toolchain"
+[[ -f "$lean_toolchain" ]] || lean_toolchain="$root/lean-toolchain"
+if ! cmp -s "$lean_toolchain" "$bundle/backends/lean/lean-toolchain"; then
     echo 'Lean toolchain differs from the pinned Aeneas release; update lean-toolchain and lake-manifest.json.' >&2
     exit 1
 fi

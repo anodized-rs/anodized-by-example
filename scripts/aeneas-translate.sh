@@ -17,9 +17,11 @@ if [[ ${CARGO_ENCODED_RUSTFLAGS+x} ]]; then
 else
     export RUSTFLAGS="${RUSTFLAGS:+$RUSTFLAGS }--cfg anodized_charon --check-cfg=cfg(anodized_charon)"
 fi
-source scripts/aeneas-pin.sh "$project/lakefile.toml"
-[[ "$(.aeneas/aeneas -version 2>/dev/null || true)" == "aeneas $tag" && -x .aeneas/charon ]] || {
-    echo 'Run ./scripts/aeneas-install.sh first.' >&2
+tag=$(awk -F'"' '/^\[/{name=""} /^name = /{name=$2} /^rev = / && name=="aeneas"{print $2}' "$project/lakefile.toml")
+: "${tag:?no Aeneas revision in $project/lakefile.toml}"
+bundle="$project/.aeneas"
+[[ "$("$bundle/aeneas" -version 2>/dev/null || true)" == "aeneas $tag" && -x "$bundle/charon" ]] || {
+    echo "Run ./scripts/aeneas-install.sh '$project' first." >&2
     exit 1
 }
 
@@ -31,9 +33,9 @@ llbc="$tmp/translation.llbc"
 subdir="$crate/translation"
 echo "Translating $project"
 # Extract Anodized's specification helpers so Lean can reduce their bodies.
-(cd "$project" && "$root/.aeneas/charon" cargo --preset=aeneas --duplicate-defaulted-methods --include 'anodized::__' --dest-file "$llbc" -- -Zhost-config -Ztarget-applies-to-host --config 'host.rustflags=["--cfg", "anodized_charon"]' --locked)
+(cd "$project" && "$bundle/charon" cargo --preset=aeneas --duplicate-defaulted-methods --include 'anodized::__' --dest-file "$llbc" -- -Zhost-config -Ztarget-applies-to-host --config 'host.rustflags=["--cfg", "anodized_charon"]' --locked)
 [[ -f "$llbc" ]] || { echo "Charon did not produce $llbc" >&2; exit 1; }
-"$root/.aeneas/aeneas" "$llbc" -backend lean -dest "$tmp" -subdir "$subdir" -split-files -emit-json
+"$bundle/aeneas" "$llbc" -backend lean -dest "$tmp" -subdir "$subdir" -split-files -emit-json
 generated="$tmp/$subdir"
 for template in "$generated"/*_Template.lean; do
     [[ -f "$template" ]] || continue

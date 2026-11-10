@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Aeneas and Charon
-        run: ./scripts/aeneas-install.sh
+        run: ./scripts/aeneas-install.sh "${{ matrix.example }}"
       - name: Regenerate translations
         run: ./scripts/aeneas-translate.sh "${{ matrix.example }}"
       - name: Check translations are current
