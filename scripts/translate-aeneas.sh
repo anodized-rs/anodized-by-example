@@ -21,7 +21,7 @@ tag=$(awk -F'"' '/^\[/{name=""} /^name = /{name=$2} /^rev = / && name=="aeneas"{
 : "${tag:?no Aeneas revision in $project/lakefile.toml}"
 bundle="$project/.aeneas"
 [[ "$("$bundle/aeneas" -version 2>/dev/null || true)" == "aeneas $tag" && -x "$bundle/charon" ]] || {
-    echo "Run ./scripts/aeneas-install.sh '$project' first." >&2
+    echo "Run ./scripts/install-aeneas.sh '$project' first." >&2
     exit 1
 }
 

@@ -19,9 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Aeneas and Charon
-        run: ./scripts/aeneas-install.sh "${{ matrix.example }}"
+        run: ./scripts/install-aeneas.sh "${{ matrix.example }}"
       - name: Regenerate translations
-        run: ./scripts/aeneas-translate.sh "${{ matrix.example }}"
+        run: ./scripts/translate-aeneas.sh "${{ matrix.example }}"
       - name: Check translations are current
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
