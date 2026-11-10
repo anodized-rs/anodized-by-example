@@ -11,7 +11,7 @@ use anodized::spec;
         None => !seq.contains(value),
     },
 )]
-pub fn bin_search<T: Ord>(seq: &[T], value: &T) -> Option<usize> {
+pub fn bin_search(seq: &[i32], value: &i32) -> Option<usize> {
     use std::cmp::Ordering::*;
     let mut lo = 0;
     let mut hi = seq.len();
@@ -26,7 +26,7 @@ pub fn bin_search<T: Ord>(seq: &[T], value: &T) -> Option<usize> {
     None
 }
 
-fn slice_is_sorted<T: Ord>(seq: &[T]) -> bool {
+fn slice_is_sorted(seq: &[i32]) -> bool {
     for i in 1..seq.len() {
         if let std::cmp::Ordering::Greater = seq[i - 1].cmp(&seq[i]) {
             return false;

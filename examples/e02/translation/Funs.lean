@@ -57,212 +57,189 @@ def anodized.__.eval_once
   := do
   coreopsfunctionFnOnceT1TupleTInst.call_once closure ()
 
-/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0, T>}::call_once]:
+/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0>}::call_once]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def
   __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_ensures_bin_search.closure T) (_ : Unit) :
+  (c : __anodized_fn_ensures_bin_search.closure) (_ : Unit) :
   Result (Option Std.Usize)
   := do
   ok c
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(), core::option::Option<usize>> for e02::__anodized_fn_ensures_bin_search::{closure}<'_0>}]
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnOnce
-  (__anodized_fn_ensures_bin_search.closure T) Unit (Option Std.Usize) := {
+  : core.ops.function.FnOnce __anodized_fn_ensures_bin_search.closure Unit
+  (Option Std.Usize) := {
   call_once :=
     __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once
-    corecmpOrdInst
 }
 
-/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}::call]:
+/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call]:
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_ensures_bin_search.closure_1.closure T) (_ : Unit) :
+  (c : __anodized_fn_ensures_bin_search.closure_1.closure) (_ : Unit) :
   Result Bool
   := do
-  let (o, s, t) := c
+  let (o, s, i) := c
   match o with
   | none =>
-    let b ← core.slice.Slice.contains corecmpOrdInst.eqInst.partialEqInst s t
+    let b ← core.slice.Slice.contains core.cmp.PartialEqI32 s i
     ok (¬ b)
   | some index =>
-    let i := Slice.len s
-    if index < i
-    then
-      let t1 ← Slice.index_usize s index
-      corecmpOrdInst.eqInst.partialEqInst.eq t1 t
+    let i1 := Slice.len s
+    if index < i1
+    then let i2 ← Slice.index_usize s index
+         ok (i2 = i)
     else ok false
 
-/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}::call_mut]:
+/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (state : __anodized_fn_ensures_bin_search.closure_1.closure T) (_ : Unit) :
-  Result (Bool × (__anodized_fn_ensures_bin_search.closure_1.closure T))
+  (state : __anodized_fn_ensures_bin_search.closure_1.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_ensures_bin_search.closure_1.closure)
   := do
   let b ←
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-      corecmpOrdInst state ()
+      state ()
   ok (b, state)
 
-/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}::call_once]:
+/-- [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}::call_once]:
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_ensures_bin_search.closure_1.closure T) (_ : Unit) :
+  (c : __anodized_fn_ensures_bin_search.closure_1.closure) (_ : Unit) :
   Result Bool
   := do
   let (b, _) ←
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-      corecmpOrdInst c ()
+      c ()
   ok b
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnOnce
-  (__anodized_fn_ensures_bin_search.closure_1.closure T) Unit Bool := {
+  : core.ops.function.FnOnce __anodized_fn_ensures_bin_search.closure_1.closure
+  Unit Bool := {
   call_once :=
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnMut
-  (__anodized_fn_ensures_bin_search.closure_1.closure T) Unit Bool := {
+  : core.ops.function.FnMut __anodized_fn_ensures_bin_search.closure_1.closure
+  Unit Bool := {
   FnOnceInst :=
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-    corecmpOrdInst
   call_mut :=
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{closure#1}::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_ensures_bin_search::{closure#1}::{closure}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 9:22-12:5 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.Fn
-  (__anodized_fn_ensures_bin_search.closure_1.closure T) Unit Bool := {
+  : core.ops.function.Fn __anodized_fn_ensures_bin_search.closure_1.closure
+  Unit Bool := {
   FnMutInst :=
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
-    corecmpOrdInst
   call :=
     __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
-    corecmpOrdInst
 }
 
-/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}::call]:
+/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_ensures_bin_search.closure_1 T)
+  (c : __anodized_fn_ensures_bin_search.closure_1)
   (tupled_args : Option Std.Usize) :
   Result (Bool × (Option Std.Usize))
   := do
-  let (b, s, t) := c
+  let (b, s, i) := c
   let b1 ←
     anodized.__.eval
-      (__anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
-      corecmpOrdInst) (tupled_args, s, t)
+      __anodized_fn_ensures_bin_search.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
+      (tupled_args, s, i)
   ok (b && b1, tupled_args)
 
-/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}::call_mut]:
+/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize.call_mut
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (state : __anodized_fn_ensures_bin_search.closure_1 T)
+  (state : __anodized_fn_ensures_bin_search.closure_1)
   (args : Option Std.Usize) :
   Result ((Bool × (Option Std.Usize)) ×
-    (__anodized_fn_ensures_bin_search.closure_1 T))
+    __anodized_fn_ensures_bin_search.closure_1)
   := do
   let p ←
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call
-      corecmpOrdInst state args
+      state args
   ok (p, state)
 
-/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}::call_once]:
+/-- [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}::call_once]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize.call_once
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_ensures_bin_search.closure_1 T) (o : Option Std.Usize) :
+  (c : __anodized_fn_ensures_bin_search.closure_1) (o : Option Std.Usize) :
   Result (Bool × (Option Std.Usize))
   := do
   let (p, _) ←
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize.call_mut
-      corecmpOrdInst c o
+      c o
   ok p
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnOnce<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnOnce
-  (__anodized_fn_ensures_bin_search.closure_1 T) (Option Std.Usize) (Bool ×
-  (Option Std.Usize)) := {
+  : core.ops.function.FnOnce __anodized_fn_ensures_bin_search.closure_1 (Option
+  Std.Usize) (Bool × (Option Std.Usize)) := {
   call_once :=
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize.call_once
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::FnMut<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnMut
-  (__anodized_fn_ensures_bin_search.closure_1 T) (Option Std.Usize) (Bool ×
-  (Option Std.Usize)) := {
+  : core.ops.function.FnMut __anodized_fn_ensures_bin_search.closure_1 (Option
+  Std.Usize) (Bool × (Option Std.Usize)) := {
   FnOnceInst :=
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnOnceTupleOptionUsizePairBoolOptionUsize
-    corecmpOrdInst
   call_mut :=
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize.call_mut
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2, T>}]
+/-- Trait implementation: [e02::__anodized_fn_ensures_bin_search::{impl core::ops::function::Fn<(core::option::Option<usize>,), (bool, core::option::Option<usize>)> for e02::__anodized_fn_ensures_bin_search::{closure#1}<'_0, '_1, '_2>}]
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 @[reducible]
 def
   __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.Fn
-  (__anodized_fn_ensures_bin_search.closure_1 T) (Option Std.Usize) (Bool ×
-  (Option Std.Usize)) := {
+  : core.ops.function.Fn __anodized_fn_ensures_bin_search.closure_1 (Option
+  Std.Usize) (Bool × (Option Std.Usize)) := {
   FnMutInst :=
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnMutTupleOptionUsizePairBoolOptionUsize
-    corecmpOrdInst
   call :=
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call
-    corecmpOrdInst
 }
 
 /-- [e02::slice_is_sorted]: loop body 0:
     Source: 'examples/e02/src/lib.rs', lines 30:4-36:1 -/
 @[rust_loop_body]
 def slice_is_sorted_loop.body
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T)
-  (iter : core.ops.range.Range Std.Usize) :
+  (seq : Slice Std.I32) (iter : core.ops.range.Range Std.Usize) :
   Result (ControlFlow (core.ops.range.Range Std.Usize) Bool)
   := do
   let (o, iter1) ←
@@ -271,9 +248,9 @@ def slice_is_sorted_loop.body
   | none => ok (done true)
   | some i =>
     let i1 ← i - 1#usize
-    let t ← Slice.index_usize seq i1
-    let t1 ← Slice.index_usize seq i
-    let o1 ← corecmpOrdInst.cmp t t1
+    let i2 ← Slice.index_usize seq i1
+    let i3 ← Slice.index_usize seq i
+    let o1 ← lift (core.cmp.impls.OrdI32.cmp i2 i3)
     match o1 with
     | Ordering.lt => ok (cont iter1)
     | Ordering.eq => ok (cont iter1)
@@ -283,145 +260,125 @@ def slice_is_sorted_loop.body
     Source: 'examples/e02/src/lib.rs', lines 30:4-36:1 -/
 @[rust_loop]
 def slice_is_sorted_loop
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (iter : core.ops.range.Range Std.Usize) (seq : Slice T) :
+  (iter : core.ops.range.Range Std.Usize) (seq : Slice Std.I32) :
   Result Bool
   := do
   loop
-    (fun iter1 => slice_is_sorted_loop.body corecmpOrdInst seq iter1)
+    (fun iter1 => slice_is_sorted_loop.body seq iter1)
     iter
 
 /-- [e02::slice_is_sorted]:
     Source: 'examples/e02/src/lib.rs', lines 29:0-36:1 -/
-def slice_is_sorted
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) :
-  Result Bool
-  := do
+def slice_is_sorted (seq : Slice Std.I32) : Result Bool := do
   let i := Slice.len seq
-  slice_is_sorted_loop corecmpOrdInst { start := 1#usize, «end» := i } seq
+  slice_is_sorted_loop { start := 1#usize, «end» := i } seq
 
-/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}::call]:
+/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call]:
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 def
   __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_requires_bin_search.closure T) (_ : Unit) :
+  (c : __anodized_fn_requires_bin_search.closure) (_ : Unit) :
   Result Bool
   := do
-  slice_is_sorted corecmpOrdInst c
+  slice_is_sorted c
 
-/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}::call_mut]:
+/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call_mut]:
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 def
   __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (state : __anodized_fn_requires_bin_search.closure T) (_ : Unit) :
-  Result (Bool × (__anodized_fn_requires_bin_search.closure T))
+  (state : __anodized_fn_requires_bin_search.closure) (_ : Unit) :
+  Result (Bool × __anodized_fn_requires_bin_search.closure)
   := do
   let b ←
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call
-      corecmpOrdInst state ()
+      state ()
   ok (b, state)
 
-/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}::call_once]:
+/-- [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}::call_once]:
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 def
   __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T)
-  (c : __anodized_fn_requires_bin_search.closure T) (_ : Unit) :
+  (c : __anodized_fn_requires_bin_search.closure) (_ : Unit) :
   Result Bool
   := do
   let (b, _) ←
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-      corecmpOrdInst c ()
+      c ()
   ok b
 
-/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}]
+/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnOnce<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}]
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 @[reducible]
 def
   __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnOnce
-  (__anodized_fn_requires_bin_search.closure T) Unit Bool := {
+  : core.ops.function.FnOnce __anodized_fn_requires_bin_search.closure Unit
+  Bool := {
   call_once :=
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}]
+/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::FnMut<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}]
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 @[reducible]
 def
   __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.FnMut
-  (__anodized_fn_requires_bin_search.closure T) Unit Bool := {
+  : core.ops.function.FnMut __anodized_fn_requires_bin_search.closure Unit Bool
+  := {
   FnOnceInst :=
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleBool
-    corecmpOrdInst
   call_mut :=
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
-    corecmpOrdInst
 }
 
-/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0, T>}]
+/-- Trait implementation: [e02::__anodized_fn_requires_bin_search::{impl core::ops::function::Fn<(), bool> for e02::__anodized_fn_requires_bin_search::{closure}<'_0>}]
     Source: 'examples/e02/src/lib.rs', lines 8:14-8:34 -/
 @[reducible]
 def __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) : core.ops.function.Fn
-  (__anodized_fn_requires_bin_search.closure T) Unit Bool := {
+  : core.ops.function.Fn __anodized_fn_requires_bin_search.closure Unit Bool
+  := {
   FnMutInst :=
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnMutTupleBool
-    corecmpOrdInst
   call :=
     __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call
-    corecmpOrdInst
 }
 
 /-- [e02::__anodized_fn_requires_bin_search]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def __anodized_fn_requires_bin_search
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) (value : T) :
-  Result Bool
-  := do
+  (seq : Slice Std.I32) (value : Std.I32) : Result Bool := do
   let b ←
     anodized.__.eval
-      (__anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool
-      corecmpOrdInst) seq
+      __anodized_fn_requires_bin_search.closure.Insts.CoreOpsFunctionFnTupleBool
+      seq
   ok (true && b)
 
 /-- [e02::__anodized_fn_ensures_bin_search]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def __anodized_fn_ensures_bin_search
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) (value : T)
+  (seq : Slice Std.I32) (value : Std.I32)
   (__anodized_output : Option Std.Usize) :
   Result Bool
   := do
   let __anodized_output1 ←
     anodized.__.eval_once
-      (__anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize
-      corecmpOrdInst) __anodized_output
+      __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize
+      __anodized_output
   let (__anodized_post, _) ←
     anodized.__.apply_keep
-      (__anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize
-      corecmpOrdInst) (true, seq, value) __anodized_output1
+      __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize
+      (true, seq, value) __anodized_output1
   ok __anodized_post
 
-/-- [e02::bin_search::{impl core::ops::function::Fn<(), bool> for e02::bin_search::{closure}<T>}::call]:
+/-- [e02::bin_search::{impl core::ops::function::Fn<(), bool> for e02::bin_search::{closure}}::call]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def bin_search.closure.Insts.CoreOpsFunctionFnTupleBool.call
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (c : bin_search.closure T)
-  (_ : Unit) :
-  Result Bool
-  := do
+  (c : bin_search.closure) (_ : Unit) : Result Bool := do
   ok true
 
-/-- [e02::bin_search::{impl core::ops::function::Fn<(), ()> for e02::bin_search::{closure#1}<T>}::call]:
+/-- [e02::bin_search::{impl core::ops::function::Fn<(), ()> for e02::bin_search::{closure#1}}::call]:
     Source: 'examples/e02/src/lib.rs', lines 6:0-13:2 -/
 def bin_search.closure_1.Insts.CoreOpsFunctionFnTupleTuple.call
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (c : bin_search.closure_1 T)
-  (_ : Unit) :
-  Result Unit
-  := do
+  (c : bin_search.closure_1) (_ : Unit) : Result Unit := do
   ok ()
 
 /-- [e02::__anodized_fn_qualifiers_bin_search]
@@ -434,8 +391,7 @@ def __anodized_fn_qualifiers_bin_search : Std.U32 := 0#u32
     Visibility: public -/
 @[rust_loop_body]
 def bin_search_loop.body
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) (value : T)
-  (lo : Std.Usize) (hi : Std.Usize) :
+  (seq : Slice Std.I32) (value : Std.I32) (lo : Std.Usize) (hi : Std.Usize) :
   Result (ControlFlow (Std.Usize × Std.Usize) (Option Std.Usize))
   := do
   if lo < hi
@@ -443,8 +399,8 @@ def bin_search_loop.body
     let i ← hi - lo
     let i1 ← i / 2#usize
     let mid ← lo + i1
-    let t ← Slice.index_usize seq mid
-    let o ← corecmpOrdInst.cmp t value
+    let i2 ← Slice.index_usize seq mid
+    let o ← lift (core.cmp.impls.OrdI32.cmp i2 value)
     match o with
     | Ordering.lt => let lo1 ← mid + 1#usize
                      ok (cont (lo1, hi))
@@ -457,22 +413,19 @@ def bin_search_loop.body
     Visibility: public -/
 @[rust_loop]
 def bin_search_loop
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) (value : T)
-  (lo : Std.Usize) (hi : Std.Usize) :
+  (seq : Slice Std.I32) (value : Std.I32) (lo : Std.Usize) (hi : Std.Usize) :
   Result (Option Std.Usize)
   := do
   loop
-    (fun (lo1, hi1) => bin_search_loop.body corecmpOrdInst seq value lo1 hi1)
+    (fun (lo1, hi1) => bin_search_loop.body seq value lo1 hi1)
     (lo, hi)
 
 /-- [e02::bin_search]:
     Source: 'examples/e02/src/lib.rs', lines 14:0-27:1
     Visibility: public -/
 def bin_search
-  {T : Type _} (corecmpOrdInst : core.cmp.Ord T) (seq : Slice T) (value : T) :
-  Result (Option Std.Usize)
-  := do
+  (seq : Slice Std.I32) (value : Std.I32) : Result (Option Std.Usize) := do
   let hi := Slice.len seq
-  bin_search_loop corecmpOrdInst seq value 0#usize hi
+  bin_search_loop seq value 0#usize hi
 
 end e02
