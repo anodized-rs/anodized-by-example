@@ -1,4 +1,4 @@
-import Obligations
+import translation.Funs
 
 open Aeneas Std Result
 open e02
@@ -158,7 +158,11 @@ private theorem ensures_eq (s : Aeneas.Std.Slice Std.I32) (v : Std.I32) (r : Opt
     __anodized_fn_ensures_bin_search.closure.Insts.CoreOpsFunctionFnOnceTupleOptionUsize.call_once,
     __anodized_fn_ensures_bin_search.closure_1.Insts.CoreOpsFunctionFnTupleOptionUsizePairBoolOptionUsize.call]
 
-theorem bin_search_spec : Obligations.fn_pre_implies_post_bin_search := by
+theorem fn_pre_implies_post_bin_search :
+    ∀ (seq : Aeneas.Std.Slice Std.I32) (value : Std.I32),
+      __anodized_fn_requires_bin_search seq value = ok true →
+        bin_search seq value ⦃ result =>
+          __anodized_fn_ensures_bin_search seq value result = ok true ⦄ := by
   intro s v pre
   have sorted_pre : slice_is_sorted s = ok true := by
     simpa [__anodized_fn_requires_bin_search, e02.anodized.__.eval,
