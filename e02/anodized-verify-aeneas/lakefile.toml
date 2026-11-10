@@ -1,5 +1,5 @@
-name = "e02"
-defaultTargets = ["e02"]
+name = "anodized_verify_aeneas"
+defaultTargets = ["anodized_verify_aeneas"]
 
 [leanOptions]
 linter.style.nameCheck = false
@@ -11,6 +11,6 @@ subDir = "backends/lean"
 rev = "nightly-2026.11.09-5a392f4"
 
 [[lean_lib]]
-name = "e02"
+name = "anodized_verify_aeneas"
 roots = ["Obligations", "Proofs", "translation"]
 globs = ["Obligations", "Proofs", "translation.+"]

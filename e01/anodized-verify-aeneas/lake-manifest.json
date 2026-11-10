@@ -123,7 +123,7 @@
       "configFile": "lakefile.toml"
     }
   ],
-  "name": "e01",
+  "name": "anodized_verify_aeneas",
   "lakeDir": ".lake",
   "fixedToolchain": false
 }
