@@ -2,7 +2,7 @@
 -- [e02]: function definitions
 module
 public import Aeneas
-public import e02.translation.Types
+public import translation.Types
 @[expose] public section
 open Aeneas Aeneas.Std Result ControlFlow Error
 set_option linter.dupNamespace false

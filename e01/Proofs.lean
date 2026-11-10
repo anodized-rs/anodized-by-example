@@ -1,4 +1,4 @@
-import e01.Obligations
+import Obligations
 
 open Aeneas Std.Result
 open e01

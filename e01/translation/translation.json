@@ -6,7 +6,7 @@
     {
       "def_id": 33,
       "lean_name": "e01.anodized.__.apply_keep",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "anodized::__::apply_keep",
       "is_local": false,
       "source": {
@@ -23,7 +23,7 @@
     {
       "def_id": 30,
       "lean_name": "e01.anodized.__.eval",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "anodized::__::eval",
       "is_local": false,
       "source": {
@@ -40,7 +40,7 @@
     {
       "def_id": 31,
       "lean_name": "e01.anodized.__.eval_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "anodized::__::eval_once",
       "is_local": false,
       "source": {
@@ -57,7 +57,7 @@
     {
       "def_id": 42,
       "lean_name": "e01.__anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f1::{impl core::ops::function::FnOnce<(), ()> for e01::__anodized_fn_ensures_f1::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -70,7 +70,7 @@
     {
       "def_id": 41,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -83,7 +83,7 @@
     {
       "def_id": 52,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call_mut",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -96,7 +96,7 @@
     {
       "def_id": 51,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -109,7 +109,7 @@
     {
       "def_id": 19,
       "lean_name": "e01.__anodized_fn_requires_f1",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -122,7 +122,7 @@
     {
       "def_id": 20,
       "lean_name": "e01.__anodized_fn_ensures_f1",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f1",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -135,7 +135,7 @@
     {
       "def_id": 21,
       "lean_name": "e01.f1",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::f1",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 9, "end_line": 9 },
@@ -148,7 +148,7 @@
     {
       "def_id": 43,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f2::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -165,7 +165,7 @@
     {
       "def_id": 67,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call",
       "is_local": true,
       "source": {
@@ -182,7 +182,7 @@
     {
       "def_id": 78,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call_mut",
       "is_local": true,
       "source": {
@@ -199,7 +199,7 @@
     {
       "def_id": 77,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -216,7 +216,7 @@
     {
       "def_id": 44,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call",
       "is_local": true,
       "source": {
@@ -233,7 +233,7 @@
     {
       "def_id": 55,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call_mut",
       "is_local": true,
       "source": {
@@ -250,7 +250,7 @@
     {
       "def_id": 54,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -267,7 +267,7 @@
     {
       "def_id": 22,
       "lean_name": "e01.__anodized_fn_requires_f2",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f2",
       "is_local": true,
       "source": {
@@ -284,7 +284,7 @@
     {
       "def_id": 23,
       "lean_name": "e01.__anodized_fn_ensures_f2",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2",
       "is_local": true,
       "source": {
@@ -301,7 +301,7 @@
     {
       "def_id": 24,
       "lean_name": "e01.f2",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::f2",
       "is_local": true,
       "source": {
@@ -318,7 +318,7 @@
     {
       "def_id": 46,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f4::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -335,7 +335,7 @@
     {
       "def_id": 68,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call",
       "is_local": true,
       "source": {
@@ -352,7 +352,7 @@
     {
       "def_id": 80,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call_mut",
       "is_local": true,
       "source": {
@@ -369,7 +369,7 @@
     {
       "def_id": 79,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}::call_once",
       "is_local": true,
       "source": {
@@ -386,7 +386,7 @@
     {
       "def_id": 47,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call",
       "is_local": true,
       "source": {
@@ -403,7 +403,7 @@
     {
       "def_id": 60,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call_mut",
       "is_local": true,
       "source": {
@@ -420,7 +420,7 @@
     {
       "def_id": 59,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}::call_once",
       "is_local": true,
       "source": {
@@ -437,7 +437,7 @@
     {
       "def_id": 45,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call",
       "is_local": true,
       "source": {
@@ -454,7 +454,7 @@
     {
       "def_id": 58,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call_mut",
       "is_local": true,
       "source": {
@@ -471,7 +471,7 @@
     {
       "def_id": 57,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -488,7 +488,7 @@
     {
       "def_id": 25,
       "lean_name": "e01.__anodized_fn_requires_f4",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4",
       "is_local": true,
       "source": {
@@ -505,7 +505,7 @@
     {
       "def_id": 26,
       "lean_name": "e01.__anodized_fn_ensures_f4",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4",
       "is_local": true,
       "source": {
@@ -522,7 +522,7 @@
     {
       "def_id": 27,
       "lean_name": "e01.f4",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::f4",
       "is_local": true,
       "source": {
@@ -539,7 +539,7 @@
     {
       "def_id": 62,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::__anodized_fn_ensures_f3::{closure}<'_0, Self>}::call_once",
       "is_local": true,
       "source": {
@@ -556,7 +556,7 @@
     {
       "def_id": 81,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call",
       "is_local": true,
       "source": {
@@ -573,7 +573,7 @@
     {
       "def_id": 84,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call_mut",
       "is_local": true,
       "source": {
@@ -590,7 +590,7 @@
     {
       "def_id": 83,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}::call_once",
       "is_local": true,
       "source": {
@@ -607,7 +607,7 @@
     {
       "def_id": 63,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call",
       "is_local": true,
       "source": {
@@ -624,7 +624,7 @@
     {
       "def_id": 72,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call_mut",
       "is_local": true,
       "source": {
@@ -641,7 +641,7 @@
     {
       "def_id": 71,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}::call_once",
       "is_local": true,
       "source": {
@@ -658,7 +658,7 @@
     {
       "def_id": 61,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call",
       "is_local": true,
       "source": {
@@ -675,7 +675,7 @@
     {
       "def_id": 70,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call_mut",
       "is_local": true,
       "source": {
@@ -692,7 +692,7 @@
     {
       "def_id": 69,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}::call_once",
       "is_local": true,
       "source": {
@@ -709,7 +709,7 @@
     {
       "def_id": 36,
       "lean_name": "e01.T.__anodized_fn_requires_f3.default",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3",
       "is_local": true,
       "source": {
@@ -726,7 +726,7 @@
     {
       "def_id": 37,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.default",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3",
       "is_local": true,
       "source": {
@@ -743,7 +743,7 @@
     {
       "def_id": 65,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -760,7 +760,7 @@
     {
       "def_id": 82,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call",
       "is_local": true,
       "source": {
@@ -777,7 +777,7 @@
     {
       "def_id": 86,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call_mut",
       "is_local": true,
       "source": {
@@ -794,7 +794,7 @@
     {
       "def_id": 85,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -811,7 +811,7 @@
     {
       "def_id": 66,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call",
       "is_local": true,
       "source": {
@@ -828,7 +828,7 @@
     {
       "def_id": 76,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call_mut",
       "is_local": true,
       "source": {
@@ -845,7 +845,7 @@
     {
       "def_id": 75,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}::call_once",
       "is_local": true,
       "source": {
@@ -862,7 +862,7 @@
     {
       "def_id": 64,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool.call",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call",
       "is_local": true,
       "source": {
@@ -879,7 +879,7 @@
     {
       "def_id": 74,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call_mut",
       "is_local": true,
       "source": {
@@ -896,7 +896,7 @@
     {
       "def_id": 73,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}::call_once",
       "is_local": true,
       "source": {
@@ -913,7 +913,7 @@
     {
       "def_id": 38,
       "lean_name": "e01.U8.Insts.E01T.__anodized_fn_requires_f3",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3",
       "is_local": true,
       "source": {
@@ -930,7 +930,7 @@
     {
       "def_id": 39,
       "lean_name": "e01.U8.Insts.E01T.__anodized_fn_ensures_f3",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3",
       "is_local": true,
       "source": {
@@ -947,7 +947,7 @@
     {
       "def_id": 40,
       "lean_name": "e01.U8.Insts.E01T.f3",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::f3",
       "is_local": true,
       "source": {
@@ -966,7 +966,7 @@
     {
       "def_id": 7,
       "lean_name": "e01.__anodized_fn_ensures_f1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f1::{closure}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 }
@@ -974,7 +974,7 @@
     {
       "def_id": 6,
       "lean_name": "e01.__anodized_fn_requires_f1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{closure}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 }
@@ -982,7 +982,7 @@
     {
       "def_id": 8,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure}",
       "is_local": true,
       "source": {
@@ -994,7 +994,7 @@
     {
       "def_id": 9,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}",
       "is_local": true,
       "source": {
@@ -1006,7 +1006,7 @@
     {
       "def_id": 22,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{closure}",
       "is_local": true,
       "source": {
@@ -1018,7 +1018,7 @@
     {
       "def_id": 11,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure}",
       "is_local": true,
       "source": {
@@ -1030,7 +1030,7 @@
     {
       "def_id": 12,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}",
       "is_local": true,
       "source": {
@@ -1042,7 +1042,7 @@
     {
       "def_id": 23,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{closure}",
       "is_local": true,
       "source": {
@@ -1054,7 +1054,7 @@
     {
       "def_id": 10,
       "lean_name": "e01.__anodized_fn_requires_f4.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{closure}",
       "is_local": true,
       "source": {
@@ -1066,7 +1066,7 @@
     {
       "def_id": 16,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure}",
       "is_local": true,
       "source": {
@@ -1078,7 +1078,7 @@
     {
       "def_id": 17,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}",
       "is_local": true,
       "source": {
@@ -1090,7 +1090,7 @@
     {
       "def_id": 24,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}",
       "is_local": true,
       "source": {
@@ -1102,7 +1102,7 @@
     {
       "def_id": 15,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{closure}",
       "is_local": true,
       "source": {
@@ -1114,7 +1114,7 @@
     {
       "def_id": 19,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}",
       "is_local": true,
       "source": {
@@ -1126,7 +1126,7 @@
     {
       "def_id": 20,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}",
       "is_local": true,
       "source": {
@@ -1138,7 +1138,7 @@
     {
       "def_id": 25,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}",
       "is_local": true,
       "source": {
@@ -1150,7 +1150,7 @@
     {
       "def_id": 18,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}",
       "is_local": true,
       "source": {
@@ -1164,7 +1164,7 @@
     {
       "def_id": 6,
       "lean_name": "e01.__anodized_fn_qualifiers_f1",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_qualifiers_f1",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -1173,7 +1173,7 @@
     {
       "def_id": 7,
       "lean_name": "e01.__anodized_fn_qualifiers_f2",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_qualifiers_f2",
       "is_local": true,
       "source": {
@@ -1186,7 +1186,7 @@
     {
       "def_id": 8,
       "lean_name": "e01.__anodized_fn_qualifiers_f4",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_qualifiers_f4",
       "is_local": true,
       "source": {
@@ -1199,7 +1199,7 @@
     {
       "def_id": 9,
       "lean_name": "e01.T.__anodized_fn_qualifiers_trait_f3.default",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_qualifiers_trait_f3",
       "is_local": true,
       "source": {
@@ -1212,7 +1212,7 @@
     {
       "def_id": 10,
       "lean_name": "e01.T.__anodized_fn_qualifiers_f3.default",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_qualifiers_f3",
       "is_local": true,
       "source": {
@@ -1225,7 +1225,7 @@
     {
       "def_id": 11,
       "lean_name": "e01.U8.Insts.E01T.__anodized_fn_qualifiers_f3",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_qualifiers_f3",
       "is_local": true,
       "source": {
@@ -1240,7 +1240,7 @@
     {
       "def_id": 4,
       "lean_name": "e01.T",
-      "lean_file": "e01/translation/Types.lean",
+      "lean_file": "translation/Types.lean",
       "rust_name": "e01::T",
       "is_local": true,
       "source": {
@@ -1254,7 +1254,7 @@
     {
       "def_id": 9,
       "lean_name": "e01.__anodized_fn_ensures_f1.closure.Insts.CoreOpsFunctionFnOnceTupleTuple",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f1::{impl core::ops::function::FnOnce<(), ()> for e01::__anodized_fn_ensures_f1::{closure}<'_0>}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -1265,7 +1265,7 @@
     {
       "def_id": 16,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -1276,7 +1276,7 @@
     {
       "def_id": 17,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -1287,7 +1287,7 @@
     {
       "def_id": 7,
       "lean_name": "e01.__anodized_fn_requires_f1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f1::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f1::{closure}<'_0>}",
       "is_local": true,
       "source": { "file": "e01/src/lib.rs", "begin_line": 8, "end_line": 8 },
@@ -1298,7 +1298,7 @@
     {
       "def_id": 10,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure.Insts.CoreOpsFunctionFnOnceTupleU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f2::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1313,7 +1313,7 @@
     {
       "def_id": 42,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1328,7 +1328,7 @@
     {
       "def_id": 43,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1343,7 +1343,7 @@
     {
       "def_id": 32,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f2::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1358,7 +1358,7 @@
     {
       "def_id": 19,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1373,7 +1373,7 @@
     {
       "def_id": 20,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1388,7 +1388,7 @@
     {
       "def_id": 12,
       "lean_name": "e01.__anodized_fn_ensures_f2.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f2::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f2::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1403,7 +1403,7 @@
     {
       "def_id": 14,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure.Insts.CoreOpsFunctionFnOnceTupleU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(), u8> for e01::__anodized_fn_ensures_f4::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1418,7 +1418,7 @@
     {
       "def_id": 44,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1433,7 +1433,7 @@
     {
       "def_id": 45,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1448,7 +1448,7 @@
     {
       "def_id": 33,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_ensures_f4::{closure#1}::{closure}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1463,7 +1463,7 @@
     {
       "def_id": 24,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1478,7 +1478,7 @@
     {
       "def_id": 25,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1493,7 +1493,7 @@
     {
       "def_id": 15,
       "lean_name": "e01.__anodized_fn_ensures_f4.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_ensures_f4::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::__anodized_fn_ensures_f4::{closure#1}<'_0, '_1>}",
       "is_local": true,
       "source": {
@@ -1508,7 +1508,7 @@
     {
       "def_id": 22,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::FnOnce<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1523,7 +1523,7 @@
     {
       "def_id": 23,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::FnMut<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1538,7 +1538,7 @@
     {
       "def_id": 13,
       "lean_name": "e01.__anodized_fn_requires_f4.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::__anodized_fn_requires_f4::{impl core::ops::function::Fn<(), bool> for e01::__anodized_fn_requires_f4::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1553,7 +1553,7 @@
     {
       "def_id": 27,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::T::__anodized_fn_ensures_f3::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1568,7 +1568,7 @@
     {
       "def_id": 48,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1583,7 +1583,7 @@
     {
       "def_id": 49,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1598,7 +1598,7 @@
     {
       "def_id": 46,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1613,7 +1613,7 @@
     {
       "def_id": 36,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1628,7 +1628,7 @@
     {
       "def_id": 37,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1643,7 +1643,7 @@
     {
       "def_id": 28,
       "lean_name": "e01.T.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::T::__anodized_fn_ensures_f3::{closure#1}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1658,7 +1658,7 @@
     {
       "def_id": 34,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1673,7 +1673,7 @@
     {
       "def_id": 35,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1688,7 +1688,7 @@
     {
       "def_id": 26,
       "lean_name": "e01.T.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::T::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::T::__anodized_fn_requires_f3::{closure}<'_0, Self>}",
       "is_local": true,
       "source": {
@@ -1703,7 +1703,7 @@
     {
       "def_id": 30,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure.Insts.CoreOpsFunctionFnOnceTupleU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(), u8> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1718,7 +1718,7 @@
     {
       "def_id": 50,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1733,7 +1733,7 @@
     {
       "def_id": 51,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1748,7 +1748,7 @@
     {
       "def_id": 47,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}::{closure}<'_0>}",
       "is_local": true,
       "source": {
@@ -1763,7 +1763,7 @@
     {
       "def_id": 40,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnOnceTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnOnce<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1778,7 +1778,7 @@
     {
       "def_id": 41,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnMutTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::FnMut<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1793,7 +1793,7 @@
     {
       "def_id": 31,
       "lean_name": "e01.TU8.__anodized_fn_ensures_f3.closure_1.Insts.CoreOpsFunctionFnTupleU8PairBoolU8",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{impl core::ops::function::Fn<(u8,), (bool, u8)> for e01::{impl e01::T for u8}::__anodized_fn_ensures_f3::{closure#1}<'_0>}",
       "is_local": true,
       "source": {
@@ -1808,7 +1808,7 @@
     {
       "def_id": 38,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnOnce<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}",
       "is_local": true,
       "source": {
@@ -1823,7 +1823,7 @@
     {
       "def_id": 39,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnMutTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::FnMut<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}",
       "is_local": true,
       "source": {
@@ -1838,7 +1838,7 @@
     {
       "def_id": 29,
       "lean_name": "e01.TU8.__anodized_fn_requires_f3.closure.Insts.CoreOpsFunctionFnTupleBool",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{impl core::ops::function::Fn<(), bool> for e01::{impl e01::T for u8}::__anodized_fn_requires_f3::{closure}}",
       "is_local": true,
       "source": {
@@ -1853,7 +1853,7 @@
     {
       "def_id": 6,
       "lean_name": "e01.U8.Insts.E01T",
-      "lean_file": "e01/translation/Funs.lean",
+      "lean_file": "translation/Funs.lean",
       "rust_name": "e01::{impl e01::T for u8}",
       "is_local": true,
       "source": {

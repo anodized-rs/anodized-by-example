@@ -1,4 +1,4 @@
-import e02.Obligations
+import Obligations
 
 open Aeneas Std Result
 open e02

@@ -12,5 +12,5 @@ rev = "nightly-2026.11.09-5a392f4"
 
 [[lean_lib]]
 name = "e02"
-srcDir = ".."
-globs = ["e02.Obligations", "e02.Proofs", "e02.translation.+"]
+roots = ["Obligations", "Proofs", "translation"]
+globs = ["Obligations", "Proofs", "translation.+"]

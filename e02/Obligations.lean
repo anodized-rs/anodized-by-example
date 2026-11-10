@@ -1,4 +1,4 @@
-import e02.translation.Funs
+import translation.Funs
 
 open Aeneas Std.Result
 

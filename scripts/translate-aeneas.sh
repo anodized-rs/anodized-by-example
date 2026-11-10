@@ -28,9 +28,8 @@ bundle="$project/.aeneas"
 # Stage output before touching committed translations; protect handwritten models.
 tmp=$(mktemp -d "${TMPDIR:-/tmp}/anodized-translation.XXXXXX")
 trap 'rm -rf "$tmp"' EXIT
-crate=${project##*/}
 llbc="$tmp/translation.llbc"
-subdir="$crate/translation"
+subdir=translation
 echo "Translating $project"
 # Extract Anodized's specification helpers so Lean can reduce their bodies.
 (cd "$project" && "$bundle/charon" cargo --preset=aeneas --duplicate-defaulted-methods --include 'anodized::__' --dest-file "$llbc" -- -Zhost-config -Ztarget-applies-to-host --config 'host.rustflags=["--cfg", "anodized_charon"]' --locked)
