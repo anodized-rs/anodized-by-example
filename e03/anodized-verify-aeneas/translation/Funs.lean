@@ -138,8 +138,7 @@ def pow2 (k : Std.Usize) : Result anodized_logic.arithmetic.int := do
   pow2_loop { start := 0#usize, «end» := k } p
 
 /-- [e03::u8_32_as_nat]: loop body 0:
-    Source: 'e03/src/lib.rs', lines 125:4-127:5
-    Visibility: public -/
+    Source: 'e03/src/lib.rs', lines 125:4-127:5 -/
 @[rust_loop_body]
 def u8_32_as_nat_loop.body
   (bytes : Array Std.U8 32#usize) (iter : core.ops.range.Range Std.Usize)
@@ -163,8 +162,7 @@ def u8_32_as_nat_loop.body
     ok (cont (iter1, acc1))
 
 /-- [e03::u8_32_as_nat]: loop 0:
-    Source: 'e03/src/lib.rs', lines 125:4-127:5
-    Visibility: public -/
+    Source: 'e03/src/lib.rs', lines 125:4-127:5 -/
 @[rust_loop]
 def u8_32_as_nat_loop
   (iter : core.ops.range.Range Std.Usize) (bytes : Array Std.U8 32#usize)
@@ -176,8 +174,7 @@ def u8_32_as_nat_loop
     (iter, acc)
 
 /-- [e03::u8_32_as_nat]:
-    Source: 'e03/src/lib.rs', lines 123:0-129:1
-    Visibility: public -/
+    Source: 'e03/src/lib.rs', lines 123:0-129:1 -/
 def u8_32_as_nat
   (bytes : Array Std.U8 32#usize) : Result anodized_logic.arithmetic.int := do
   let acc ← anodized_logic.arithmetic.int.Insts.CoreConvertFromI32.from 0#i32
@@ -226,7 +223,7 @@ def fe51_as_nat
   u64_5_as_nat fe.limbs
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call]:
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
   (c : __anodized_fn_ensures_from_bytes.closure_1.closure) (_ : Unit) :
@@ -241,7 +238,7 @@ def
   anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint.eq i i3
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call_mut]:
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
   (state : __anodized_fn_ensures_from_bytes.closure_1.closure) (_ : Unit) :
@@ -253,7 +250,7 @@ def
   ok (b, state)
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call_once]:
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
   (c : __anodized_fn_ensures_from_bytes.closure_1.closure) (_ : Unit) :
@@ -265,7 +262,7 @@ def
   ok b
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
@@ -276,7 +273,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
@@ -289,7 +286,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}]
-    Source: 'e03/src/lib.rs', lines 40:8-40:58 -/
+    Source: 'e03/src/lib.rs', lines 40:8-40:67 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
@@ -413,7 +410,7 @@ def fe51_limbs_bounded (fe : FieldElement51) : Result Bool := do
   fe51_limbs_bounded_loop iter
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call]:
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call
   (c : __anodized_fn_ensures_from_bytes.closure_2.closure) (_ : Unit) :
@@ -422,7 +419,7 @@ def
   fe51_limbs_bounded c
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call_mut]:
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
   (state : __anodized_fn_ensures_from_bytes.closure_2.closure) (_ : Unit) :
@@ -434,7 +431,7 @@ def
   ok (b, state)
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call_once]:
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
   (c : __anodized_fn_ensures_from_bytes.closure_2.closure) (_ : Unit) :
@@ -446,7 +443,7 @@ def
   ok b
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}]
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool
@@ -457,7 +454,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}]
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool
@@ -470,7 +467,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}]
-    Source: 'e03/src/lib.rs', lines 42:8-42:30 -/
+    Source: 'e03/src/lib.rs', lines 42:8-42:39 -/
 @[reducible]
 def
   __anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool
@@ -667,7 +664,7 @@ def spec_load8_at
   anodized_logic.arithmetic.int.Insts.CoreOpsArithAddintint.add i48 i54
 
 /-- [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call]:
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call
   (c : __anodized_fn_ensures_load8_at.closure_1.closure) (_ : Unit) :
@@ -679,7 +676,7 @@ def
   anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint.eq i2 i3
 
 /-- [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call_mut]:
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut
   (state : __anodized_fn_ensures_load8_at.closure_1.closure) (_ : Unit) :
@@ -691,7 +688,7 @@ def
   ok (b, state)
 
 /-- [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call_once]:
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once
   (c : __anodized_fn_ensures_load8_at.closure_1.closure) (_ : Unit) :
@@ -703,7 +700,7 @@ def
   ok b
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}]
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 @[reducible]
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool
@@ -714,7 +711,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}]
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 @[reducible]
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool
@@ -727,7 +724,7 @@ def
 }
 
 /-- Trait implementation: [e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}]
-    Source: 'e03/src/lib.rs', lines 65:17-65:56 -/
+    Source: 'e03/src/lib.rs', lines 65:22-65:66 -/
 @[reducible]
 def
   __anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool
@@ -926,8 +923,7 @@ def __anodized_fn_requires_load8_at
   ok (true && b)
 
 /-- [e03::load8_at]:
-    Source: 'e03/src/lib.rs', lines 67:0-76:1
-    Visibility: public -/
+    Source: 'e03/src/lib.rs', lines 67:0-76:1 -/
 def load8_at (input : Slice Std.U8) (i : Std.Usize) : Result Std.U64 := do
   let i1 ← Slice.index_usize input i
   let i2 ← lift (UScalar.cast .U64 i1)
