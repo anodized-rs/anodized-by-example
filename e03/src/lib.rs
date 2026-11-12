@@ -35,11 +35,11 @@ pub struct FieldElement51 {
 /// the canonical encoding, and check that the input was
 /// canonical.
 #[spec(
-    ensures: |r| [
+    ensures: |field_elem| [
         // Decode bytes to limbs (bit 255 is cleared)
-        fe51_as_nat(&r) == u8_32_as_nat(bytes) % pow2(255),
+        fe51_as_nat(&field_elem) == u8_32_as_nat(bytes) % pow2(255),
         // Each limb is masked with (2^51 - 1), so bounded by 51 bits
-        fe51_limbs_bounded(&r),
+        fe51_limbs_bounded(&field_elem),
     ],
 )]
 pub fn from_bytes(bytes: &[u8; 32]) -> FieldElement51 {
@@ -62,9 +62,9 @@ pub fn from_bytes(bytes: &[u8; 32]) -> FieldElement51 {
 
 #[spec(
     requires: i + 7 < input.len(),
-    ensures: |r| int::from(r) == spec_load8_at(input, i),
+    ensures: |output| int::from(output) == spec_load8_at(input, i),
 )]
-pub fn load8_at(input: &[u8], i: usize) -> u64 {
+fn load8_at(input: &[u8], i: usize) -> u64 {
     (input[i] as u64)
         | ((input[i + 1] as u64) << 8)
         | ((input[i + 2] as u64) << 16)
@@ -106,7 +106,7 @@ fn fe51_limbs_bounded(fe: &FieldElement51) -> bool {
     true
 }
 
-// Evaluation function, given a field element as limbs, reconstruct the nat value it represents.
+/// Evaluation function, given a field element as limbs, reconstruct the nat value it represents.
 #[rustfmt::skip]
 fn u64_5_as_nat(limbs: [u64; 5]) -> int {
                 int::from(limbs[0]) +
@@ -120,7 +120,7 @@ fn u64_5_as_nat(limbs: [u64; 5]) -> int {
 ///
 /// This function interprets a byte array as a 256-bit little-endian integer:
 /// bytes[0] + bytes[1] * 2^8 + bytes[2] * 2^16 + ... + bytes[31] * 2^248
-pub fn u8_32_as_nat(bytes: &[u8; 32]) -> int {
+fn u8_32_as_nat(bytes: &[u8; 32]) -> int {
     let mut acc = int::from(0);
     for i in 0..bytes.len() {
         acc = acc + pow2(8 * i) * int::from(bytes[i]);
