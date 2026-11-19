@@ -12,5 +12,5 @@ rev = "nightly-2026.11.09-5a392f4"
 
 [[lean_lib]]
 name = "anodized_verify_aeneas"
-roots = ["Obligations", "Proofs", "translation"]
-globs = ["Obligations", "Proofs", "translation.+"]
+roots = ["Obligations", "Proofs", "IntExternal", "translation"]
+globs = ["Obligations", "Proofs", "IntExternal", "translation.+"]
