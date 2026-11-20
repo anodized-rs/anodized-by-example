@@ -380,11 +380,10 @@ def
     Source: 'e03/src/lib.rs', lines 101:4-107:1 -/
 @[rust_loop_body]
 def fe51_limbs_bounded_loop.body
-  (iter : core.array.iter.IntoIter Std.U64 5#usize) :
-  Result (ControlFlow (core.array.iter.IntoIter Std.U64 5#usize) Bool)
+  (iter : core.slice.iter.Iter Std.U64) :
+  Result (ControlFlow (core.slice.iter.Iter Std.U64) Bool)
   := do
-  let (o, iter1) ←
-    core.array.iter.IntoIter.Insts.CoreIterTraitsIteratorIterator.next iter
+  let (o, iter1) ← core.slice.iter.IteratorSliceIter.next iter
   match o with
   | none => ok (done true)
   | some limb =>
@@ -397,7 +396,7 @@ def fe51_limbs_bounded_loop.body
     Source: 'e03/src/lib.rs', lines 101:4-107:1 -/
 @[rust_loop]
 def fe51_limbs_bounded_loop
-  (iter : core.array.iter.IntoIter Std.U64 5#usize) : Result Bool := do
+  (iter : core.slice.iter.Iter Std.U64) : Result Bool := do
   loop
     (fun iter1 => fe51_limbs_bounded_loop.body iter1)
     iter
@@ -406,7 +405,8 @@ def fe51_limbs_bounded_loop
     Source: 'e03/src/lib.rs', lines 100:0-107:1 -/
 def fe51_limbs_bounded (fe : FieldElement51) : Result Bool := do
   let iter ←
-    Array.Insts.CoreIterTraitsCollectIntoIteratorTIntoIter.into_iter fe.limbs
+    SharedArray.Insts.CoreIterTraitsCollectIntoIteratorSharedIter.into_iter
+      fe.limbs
   fe51_limbs_bounded_loop iter
 
 /-- [e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call]:

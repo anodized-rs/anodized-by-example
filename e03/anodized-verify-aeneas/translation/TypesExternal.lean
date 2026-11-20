@@ -19,13 +19,6 @@ set_option maxHeartbeats 1000000
 /- You can set the `maxRecDepth` value with the `-max-recdepth` CLI option -/
 set_option maxRecDepth 2048
 
-/-- [core::array::iter::IntoIter]
-    Source: '/rustc/library/core/src/array/iter.rs', lines 20:0-20:38
-    Name pattern: [core::array::iter::IntoIter]
-    Visibility: public -/
-@[rust_type "core::array::iter::IntoIter"]
-axiom core.array.iter.IntoIter (T : Type _) (N : Std.Usize) : Type
-
 /-- [anodized_logic::arithmetic::int]
     Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-logic-0.8.0/src/arithmetic.rs', lines 6:0-6:14
     Name pattern: [anodized_logic::arithmetic::int]

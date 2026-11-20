@@ -4,41 +4,7 @@
   "crate": "e03",
   "functions": [
     {
-      "def_id": 43,
-      "lean_name": "Array.Insts.CoreIterTraitsCollectIntoIteratorTIntoIter.into_iter",
-      "lean_file": "translation/FunsExternal.lean",
-      "rust_name": "core::array::iter::{impl core::iter::traits::collect::IntoIterator<T, core::array::iter::IntoIter<T, N>> for [T; N]}::into_iter",
-      "is_local": false,
-      "source": {
-        "file": "/rustc/library/core/src/array/iter.rs",
-        "begin_line": 59,
-        "end_line": 59
-      },
-      "is_opaque": true,
-      "can_fail": true,
-      "can_diverge": false,
-      "is_rec": false,
-      "reducible": false
-    },
-    {
-      "def_id": 44,
-      "lean_name": "core.array.iter.IntoIter.Insts.CoreIterTraitsIteratorIterator.next",
-      "lean_file": "translation/FunsExternal.lean",
-      "rust_name": "core::array::iter::{impl core::iter::traits::iterator::Iterator<T> for core::array::iter::IntoIter<T, N>}::next",
-      "is_local": false,
-      "source": {
-        "file": "/rustc/library/core/src/array/iter.rs",
-        "begin_line": 245,
-        "end_line": 245
-      },
-      "is_opaque": true,
-      "can_fail": true,
-      "can_diverge": false,
-      "is_rec": false,
-      "reducible": false
-    },
-    {
-      "def_id": 223,
+      "def_id": 231,
       "lean_name": "anodized_logic.arithmetic.int.Insts.CoreCmpPartialEqint.eq",
       "lean_file": "translation/FunsExternal.lean",
       "rust_name": "anodized_logic::arithmetic::{impl core::cmp::PartialEq<anodized_logic::arithmetic::int> for anodized_logic::arithmetic::int}::eq",
@@ -157,7 +123,7 @@
       "reducible": false
     },
     {
-      "def_id": 222,
+      "def_id": 230,
       "lean_name": "anodized_logic.arithmetic.int.Insts.CoreOpsArithRemintint.rem",
       "lean_file": "translation/FunsExternal.lean",
       "rust_name": "anodized_logic::arithmetic::{impl core::ops::arith::Rem<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int> for anodized_logic::arithmetic::int}::rem",
@@ -403,7 +369,7 @@
       "reducible": false
     },
     {
-      "def_id": 215,
+      "def_id": 223,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call",
@@ -420,7 +386,7 @@
       "reducible": false
     },
     {
-      "def_id": 225,
+      "def_id": 233,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call_mut",
@@ -437,7 +403,7 @@
       "reducible": false
     },
     {
-      "def_id": 224,
+      "def_id": 232,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}::call_once",
@@ -471,7 +437,7 @@
       "reducible": false
     },
     {
-      "def_id": 170,
+      "def_id": 178,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.Insts.CoreOpsFunctionFnMutTupleFieldElement51PairBoolFieldElement51.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnMut<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#1}<'_0, '_1>}::call_mut",
@@ -488,7 +454,7 @@
       "reducible": false
     },
     {
-      "def_id": 169,
+      "def_id": 177,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.Insts.CoreOpsFunctionFnOnceTupleFieldElement51PairBoolFieldElement51.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnOnce<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#1}<'_0, '_1>}::call_once",
@@ -560,7 +526,7 @@
       "reducible": false
     },
     {
-      "def_id": 216,
+      "def_id": 224,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool.call",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call",
@@ -577,7 +543,7 @@
       "reducible": false
     },
     {
-      "def_id": 227,
+      "def_id": 235,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call_mut",
@@ -594,7 +560,7 @@
       "reducible": false
     },
     {
-      "def_id": 226,
+      "def_id": 234,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}::call_once",
@@ -628,7 +594,7 @@
       "reducible": false
     },
     {
-      "def_id": 172,
+      "def_id": 180,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.Insts.CoreOpsFunctionFnMutTupleFieldElement51PairBoolFieldElement51.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnMut<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#2}<'_0>}::call_mut",
@@ -645,7 +611,7 @@
       "reducible": false
     },
     {
-      "def_id": 171,
+      "def_id": 179,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.Insts.CoreOpsFunctionFnOnceTupleFieldElement51PairBoolFieldElement51.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnOnce<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#2}<'_0>}::call_once",
@@ -713,7 +679,7 @@
       "reducible": false
     },
     {
-      "def_id": 217,
+      "def_id": 225,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool.call",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call",
@@ -730,7 +696,7 @@
       "reducible": false
     },
     {
-      "def_id": 229,
+      "def_id": 237,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call_mut",
@@ -747,7 +713,7 @@
       "reducible": false
     },
     {
-      "def_id": 228,
+      "def_id": 236,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}::call_once",
@@ -781,7 +747,7 @@
       "reducible": false
     },
     {
-      "def_id": 177,
+      "def_id": 185,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.Insts.CoreOpsFunctionFnMutTupleU64PairBoolU64.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{impl core::ops::function::FnMut<(u64,), (bool, u64)> for e03::__anodized_fn_ensures_load8_at::{closure#1}<'_0, '_1, '_2>}::call_mut",
@@ -798,7 +764,7 @@
       "reducible": false
     },
     {
-      "def_id": 176,
+      "def_id": 184,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.Insts.CoreOpsFunctionFnOnceTupleU64PairBoolU64.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{impl core::ops::function::FnOnce<(u64,), (bool, u64)> for e03::__anodized_fn_ensures_load8_at::{closure#1}<'_0, '_1, '_2>}::call_once",
@@ -866,7 +832,7 @@
       "reducible": false
     },
     {
-      "def_id": 175,
+      "def_id": 183,
       "lean_name": "e03.__anodized_fn_requires_load8_at.closure.Insts.CoreOpsFunctionFnMutTupleBool.call_mut",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_requires_load8_at::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_requires_load8_at::{closure}<'_0, '_1>}::call_mut",
@@ -883,7 +849,7 @@
       "reducible": false
     },
     {
-      "def_id": 174,
+      "def_id": 182,
       "lean_name": "e03.__anodized_fn_requires_load8_at.closure.Insts.CoreOpsFunctionFnOnceTupleBool.call_once",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_requires_load8_at::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_requires_load8_at::{closure}<'_0, '_1>}::call_once",
@@ -953,18 +919,6 @@
   ],
   "types": [
     {
-      "def_id": 14,
-      "lean_name": "core.array.iter.IntoIter",
-      "lean_file": "translation/TypesExternal.lean",
-      "rust_name": "core::array::iter::IntoIter",
-      "is_local": false,
-      "source": {
-        "file": "/rustc/library/core/src/array/iter.rs",
-        "begin_line": 20,
-        "end_line": 20
-      }
-    },
-    {
       "def_id": 13,
       "lean_name": "anodized_logic.arithmetic.int",
       "lean_file": "translation/TypesExternal.lean",
@@ -1025,7 +979,7 @@
       }
     },
     {
-      "def_id": 52,
+      "def_id": 53,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure",
       "lean_file": "translation/Types.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}",
@@ -1037,7 +991,7 @@
       }
     },
     {
-      "def_id": 54,
+      "def_id": 55,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure",
       "lean_file": "translation/Types.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}",
@@ -1049,7 +1003,7 @@
       }
     },
     {
-      "def_id": 55,
+      "def_id": 56,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure",
       "lean_file": "translation/Types.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}",
@@ -1186,7 +1140,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 55,
+      "def_id": 54,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}",
@@ -1201,7 +1155,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 56,
+      "def_id": 55,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}",
@@ -1216,7 +1170,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 50,
+      "def_id": 49,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#1}::{closure}<'_0, '_1>}",
@@ -1231,7 +1185,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 37,
+      "def_id": 36,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.Insts.CoreOpsFunctionFnOnceTupleFieldElement51PairBoolFieldElement51",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnOnce<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#1}<'_0, '_1>}",
@@ -1246,7 +1200,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 38,
+      "def_id": 37,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_1.Insts.CoreOpsFunctionFnMutTupleFieldElement51PairBoolFieldElement51",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnMut<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#1}<'_0, '_1>}",
@@ -1276,7 +1230,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 57,
+      "def_id": 56,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}",
@@ -1291,7 +1245,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 58,
+      "def_id": 57,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnMutTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}",
@@ -1306,7 +1260,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 51,
+      "def_id": 50,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.closure.Insts.CoreOpsFunctionFnTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{closure#2}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_from_bytes::{closure#2}::{closure}<'_0>}",
@@ -1321,7 +1275,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 39,
+      "def_id": 38,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.Insts.CoreOpsFunctionFnOnceTupleFieldElement51PairBoolFieldElement51",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnOnce<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#2}<'_0>}",
@@ -1336,7 +1290,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 40,
+      "def_id": 39,
       "lean_name": "e03.__anodized_fn_ensures_from_bytes.closure_2.Insts.CoreOpsFunctionFnMutTupleFieldElement51PairBoolFieldElement51",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_from_bytes::{impl core::ops::function::FnMut<(e03::FieldElement51,), (bool, e03::FieldElement51)> for e03::__anodized_fn_ensures_from_bytes::{closure#2}<'_0>}",
@@ -1366,7 +1320,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 59,
+      "def_id": 58,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}",
@@ -1381,7 +1335,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 60,
+      "def_id": 59,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnMutTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}",
@@ -1396,7 +1350,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 52,
+      "def_id": 51,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.closure.Insts.CoreOpsFunctionFnTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{closure#1}::{impl core::ops::function::Fn<(), bool> for e03::__anodized_fn_ensures_load8_at::{closure#1}::{closure}<'_0, '_1, '_2>}",
@@ -1411,7 +1365,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 43,
+      "def_id": 42,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.Insts.CoreOpsFunctionFnOnceTupleU64PairBoolU64",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{impl core::ops::function::FnOnce<(u64,), (bool, u64)> for e03::__anodized_fn_ensures_load8_at::{closure#1}<'_0, '_1, '_2>}",
@@ -1426,7 +1380,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 44,
+      "def_id": 43,
       "lean_name": "e03.__anodized_fn_ensures_load8_at.closure_1.Insts.CoreOpsFunctionFnMutTupleU64PairBoolU64",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_ensures_load8_at::{impl core::ops::function::FnMut<(u64,), (bool, u64)> for e03::__anodized_fn_ensures_load8_at::{closure#1}<'_0, '_1, '_2>}",
@@ -1471,7 +1425,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 41,
+      "def_id": 40,
       "lean_name": "e03.__anodized_fn_requires_load8_at.closure.Insts.CoreOpsFunctionFnOnceTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_requires_load8_at::{impl core::ops::function::FnOnce<(), bool> for e03::__anodized_fn_requires_load8_at::{closure}<'_0, '_1>}",
@@ -1486,7 +1440,7 @@
       "impl_trait_is_builtin": true
     },
     {
-      "def_id": 42,
+      "def_id": 41,
       "lean_name": "e03.__anodized_fn_requires_load8_at.closure.Insts.CoreOpsFunctionFnMutTupleBool",
       "lean_file": "translation/Funs.lean",
       "rust_name": "e03::__anodized_fn_requires_load8_at::{impl core::ops::function::FnMut<(), bool> for e03::__anodized_fn_requires_load8_at::{closure}<'_0, '_1>}",

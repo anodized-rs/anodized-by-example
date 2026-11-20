@@ -21,27 +21,6 @@ set_option maxHeartbeats 1000000
 set_option maxRecDepth 2048
 open e03
 
-/-- [core::array::iter::{impl core::iter::traits::collect::IntoIterator<T, core::array::iter::IntoIter<T, N>> for [T; N]}::into_iter]:
-    Source: '/rustc/library/core/src/array/iter.rs', lines 59:4-59:40
-    Name pattern: [core::array::iter::{core::iter::traits::collect::IntoIterator<[@T; @N], @T, core::array::iter::IntoIter<@T, @N>>}::into_iter]
-    Visibility: public -/
-@[rust_fun
-  "core::array::iter::{core::iter::traits::collect::IntoIterator<[@T; @N], @T, core::array::iter::IntoIter<@T, @N>>}::into_iter"]
-axiom Array.Insts.CoreIterTraitsCollectIntoIteratorTIntoIter.into_iter
-  {T : Type _} {N : Std.Usize} :
-  Array T N → Result (core.array.iter.IntoIter T N)
-
-/-- [core::array::iter::{impl core::iter::traits::iterator::Iterator<T> for core::array::iter::IntoIter<T, N>}::next]:
-    Source: '/rustc/library/core/src/array/iter.rs', lines 245:4-245:44
-    Name pattern: [core::array::iter::{core::iter::traits::iterator::Iterator<core::array::iter::IntoIter<@T, @N>, @T>}::next]
-    Visibility: public -/
-@[rust_fun
-  "core::array::iter::{core::iter::traits::iterator::Iterator<core::array::iter::IntoIter<@T, @N>, @T>}::next"]
-axiom core.array.iter.IntoIter.Insts.CoreIterTraitsIteratorIterator.next
-  {T : Type _} {N : Std.Usize} :
-  core.array.iter.IntoIter T N → Result ((Option T) ×
-    (core.array.iter.IntoIter T N))
-
 /-- [anodized_logic::arithmetic::{impl core::cmp::PartialEq<anodized_logic::arithmetic::int> for anodized_logic::arithmetic::int}::eq]:
     Source: '/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anodized-logic-0.8.0/src/arithmetic.rs', lines 4:27-4:36
     Name pattern: [anodized_logic::arithmetic::{core::cmp::PartialEq<anodized_logic::arithmetic::int, anodized_logic::arithmetic::int>}::eq]

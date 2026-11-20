@@ -98,8 +98,8 @@ fn fe51_as_nat(fe: &FieldElement51) -> int {
 
 /// Spec predicate: all limbs are bounded by a given bit limit.
 fn fe51_limbs_bounded(fe: &FieldElement51) -> bool {
-    for limb in fe.limbs {
-        if limb >= 1u64 << 51 {
+    for limb in &fe.limbs {
+        if *limb >= 1u64 << 51 {
             return false;
         }
     }
