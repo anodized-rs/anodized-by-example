@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        example: [e01, e02]
+        example: [e01, e02, e03]
     steps:
       - uses: actions/checkout@v4
       - name: Install Aeneas and Charon

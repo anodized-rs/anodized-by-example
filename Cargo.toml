@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["e01", "e02"]
+members = ["e01", "e02", "e03"]
 
 [workspace.dependencies]
 anodized = "0.8.0"

@@ -1,0 +1,9 @@
+# Aeneas/Charon release bundle
+.aeneas/
+.logs/
+
+# Charon intermediate output
+*.llbc
+
+# Lean
+.lake/
